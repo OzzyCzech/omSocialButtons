@@ -1,0 +1,407 @@
+<?php
+require_once dirname(__FILE__) . '/google/header.phtml';
+require_once dirname(__FILE__) . '/facebook/header.phtml';
+
+$langs = array(
+	"" => 'Select language',
+	"fr" => 'French - français',
+	"en" => 'English', // default
+	//"ar" => 'Arabic - العربية',
+	//"ja" => 'Japanese - 日本語',
+	"es" => 'Spanish - Español',
+	"de" => 'German - Deutsch',
+	"it" => 'Italian - Italiano',
+	//"id" => 'Indonesian - Bahasa Indonesia',
+	"pt" => 'Portuguese - Português',
+	//"ko" => 'Korean - 한국어',
+	//"tr" => 'Turkish - Türkçe',
+	"ru" => 'Russian - Русский',
+	"nl" => 'Dutch - Nederlands',
+	//"fil" => 'Filipino - Filipino',
+	//"msa" => 'Malay - Bahasa Melayu',
+	//"zh-tw" => 'Traditional Chinese - 繁體中文',
+	//"zh-cn" => 'Simplified Chinese - 简体中文',
+	//"hi" => 'Hindi - हिन्दी',
+	"no" => 'Norwegian - Norsk',
+	"sv" => 'Swedish - Svenska',
+	"fi" => 'Finnish - Suomi',
+	"da" => 'Danish - Dansk',
+	"pl" => 'Polish - Polski',
+	"hu" => 'Hungarian - Magyar',
+	//"fa" => 'Farsi - فارسی',
+	//"he" => 'Hebrew - עִבְרִית',
+	//"ur" => 'Urdu - اردو',
+	//"th" => 'Thai - ภาษาไทย',
+	//"uk" => 'Ukrainian - Українська мова',
+	//"ca" => 'Catalan - català',
+	//"el" => 'Greek - Ελληνικά',
+	//"eu" => 'Basque - Euskara',
+	"cs" => 'Czech - Čeština'
+);
+
+if (!current_user_can('manage_options'))
+	wp_die(__('You do not have sufficient permissions to manage options for this site.'));
+?>
+
+<style type="text/css">h3{ border-bottom: 1px solid #ddd;}</style>
+<div class="wrap">
+<?php screen_icon(); ?>
+<h2>Social Buttons Settings</h2>
+
+<form action="options-general.php?page=social/social.php" method="post">
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<table class="form-table">
+    <tr>
+        <td colspan="2"><h3>Twitter</h3></td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Enable') ?></th>
+        <td>
+            <label for="twitter_enable">
+                <input name="twitter_enable" type="checkbox" id="twitter_enable"
+                       value="1" <?php checked('1', $twitter_enable); ?> />
+							<?php _e('enable button') ?></label>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><label for="twitter_via"><?php _e('Twitter via') ?></label></th>
+        <td>
+            <label for="twitter_via">@</label>
+            <input name="twitter_via" type="text" id="twitter_via"
+                   value="<?php echo esc_attr($twitter_via); ?>"
+                   class="regular-text"/>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><label for="twitter_related"><?php _e('Related account') ?></label></th>
+        <td>
+            <input name="twitter_related" type="text" id="twitter_related"
+                   value="<?php echo esc_attr($twitter_related); ?>"
+                   class="regular-text"/>
+
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><label for="twitter_lang"><?php _e('Lang') ?></label></th>
+        <td>
+            <select id="twitter_lang" name="twitter_lang">
+							<?php
+							foreach ($langs as $lang => $title) {
+								echo '<option value="' . $lang . '" ' . selected(
+									$twitter_lang, $lang, false
+								) . '>' . $title . '</option>';
+							}?>
+            </select>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><label for="twitter_text"><?php _e('Twitter text') ?></label></th>
+        <td>
+            <input name="twitter_text" type="text" id="twitter_text"
+                   value="<?php echo esc_attr($twitter_text); ?>"
+                   class="regular-text"/>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Size') ?></th>
+        <td>
+            <label for="twitter_size">
+                <input name="twitter_size" type="checkbox" id="twitter_size"
+                       value="1" <?php checked('1', $twitter_size); ?> />
+							<?php _e('Large button') ?></label>
+        </td>
+    </tr>
+
+    <tr oninvalid="top">
+        <th scope="row"><?php _e('Count') ?></th>
+        <td>
+            <select name="twitter_count" id="twitter_count">
+                <option value="" <?php selected($twitter_count, ''); ?>>None</option>
+                <option value="horizontal" <?php selected($twitter_count, 'horizontal'); ?>>Horizontal</option>
+                <option value="vertical" <?php selected($twitter_count, 'vertical'); ?>>Vertical</option>
+            </select>
+        </td>
+
+    </tr>
+
+
+    <tr valign="top">
+        <th scope="row"><label for="twitter_hashtags"><?php _e('Twitter hashtags') ?></label></th>
+        <td>
+            <input name="twitter_hashtags" type="text" id="twitter_hashtags"
+                   value="<?php echo esc_attr($twitter_hashtags); ?>"
+                   class="regular-text"/>
+        </td>
+    </tr>
+
+    <tr>
+        <th><?php _e('Example'); ?></th>
+        <td><?php SocialButtons::twitter(); ?></td>
+    </tr>
+
+    <tr>
+        <th><?php _e('More info about') ?></th>
+        <td><a href="https://dev.twitter.com/docs/tweet-button" target="_blank" class="button-secondary">Tweet
+            button</a>
+        </td>
+    </tr>
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<table class="form-table">
+    <tr>
+        <td colspan="2"><h3>Google plus</h3></td>
+    </tr>
+
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Enable') ?></th>
+        <td>
+            <label for="google_enable">
+                <input name="google_enable" type="checkbox" id="google_enable"
+                       value="1" <?php checked('1', $google_enable); ?> />
+							<?php _e('enable button') ?></label>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Size') ?></th>
+        <td>
+            <select name="google_size" id="google_size">
+                <option value="small" <?php selected($google_size, 'small'); ?>>Small</option>
+                <option value="medium" <?php selected($google_size, 'medium'); ?>>Medium</option>
+                <option value="" <?php selected($google_size, ''); ?>>Normal</option>
+                <option value="tall" <?php selected($google_size, 'tall'); ?>>Tall</option>
+            </select>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Annotation') ?></th>
+        <td>
+            <select name="google_annotation" id="google_annotation">
+                <option value="inline" <?php selected($google_annotation, 'inline'); ?>>Inline</option>
+                <option value="" <?php selected($google_annotation, ''); ?>>Bubble</option>
+                <option value="none" <?php selected($google_annotation, 'none'); ?>>None</option>
+            </select>
+        </td>
+    </tr>
+
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Width') ?></th>
+        <td>
+            <input name="google_width" type="text" id="google_width"
+                   value="<?php echo esc_attr($google_width); ?>"
+                   class="regular-text"/>
+            <label for="google_width">px</label>
+
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><label for="google_lang"><?php _e('Lang') ?></label></th>
+        <td>
+            <select id="google_lang" name="google_lang">
+							<?php
+							foreach ($langs as $lang => $title) {
+								echo '<option value="' . $lang . '" ' . selected(
+									$google_lang, $lang, false
+								) . '>' . $title . '</option>';
+							}?>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <th><?php _e('Example'); ?></th>
+        <td><?php SocialButtons::googleplus(); ?></td>
+    </tr>
+
+    <tr>
+        <th><?php _e('More info about') ?></th>
+        <td><a href="https://developers.google.com/+/plugins/+1button/" target="_blank" class="button-secondary">Google+
+            button</a>
+        </td>
+    </tr>
+
+
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<table class="form-table">
+    <tr>
+        <td colspan="2"><h3>Facebook</h3></td>
+    </tr>
+
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Enable') ?></th>
+        <td>
+            <label for="facebook_enable">
+                <input name="facebook_enable" type="checkbox" id="facebook_enable"
+                       value="1" <?php checked('1', $facebook_enable); ?> />
+							<?php _e('enable button') ?></label>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Width') ?></th>
+        <td>
+            <input name="facebook_width" type="text" id="facebook_width"
+                   value="<?php echo esc_attr($facebook_width); ?>"
+                   class="regular-text"/>
+            <label for="facebook_width">px</label>
+
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Send button') ?></th>
+        <td>
+            <label for="facebook_send">
+                <input name="facebook_send" type="checkbox" id="facebook_send"
+                       value="1" <?php checked('1', $facebook_send); ?> />
+							<?php _e('send button') ?></label>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Show faces') ?></th>
+        <td>
+            <label for="facebook_show_faces">
+                <input name="facebook_show_faces" type="checkbox" id="facebook_show_faces"
+                       value="1" <?php checked('1', $facebook_show_faces); ?> />
+							<?php _e('show faces') ?></label>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Color scheme') ?></th>
+        <td>
+            <select name="facebook_colorscheme" id="facebook_colorscheme">
+                <option value="" <?php selected($facebook_colorscheme, ''); ?>>Light</option>
+                <option value="dark" <?php selected($facebook_colorscheme, 'dark'); ?>>Dark</option>
+            </select>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Layout') ?></th>
+        <td>
+            <select name="facebook_layout" id="facebook_layout">
+                <option value="" <?php selected($facebook_layout, ''); ?>>standard</option>
+                <option value="button_count" <?php selected($facebook_layout, 'button_count'); ?>>button_count</option>
+                <option value="box_count" <?php selected($facebook_layout, 'box_count'); ?>>box_count</option>
+            </select>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Font') ?></th>
+        <td>
+            <select name="facebook_font" id="facebook_font">
+                <option value="" <?php selected($facebook_font, ''); ?>></option>
+                <option value="arial" <?php selected($facebook_font, 'arial'); ?>>arial</option>
+                <option value="lucida grande" <?php selected($facebook_font, 'lucida grande'); ?>>lucida grande</option>
+                <option value="segoe ui" <?php selected($facebook_font, 'segoe ui'); ?>>segoe ui</option>
+                <option value="tahoma" <?php selected($facebook_font, 'tahoma'); ?>>tahoma</option>
+                <option value="trebuchet ms" <?php selected($facebook_font, 'trebuchet ms'); ?>>trebuchet ms</option>
+                <option value="verdana" <?php selected($facebook_font, 'verdana'); ?>>verdana</option>
+            </select>
+        </td>
+    </tr>
+
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Action') ?></th>
+        <td>
+            <select name="facebook_action" id="facebook_action">
+                <option value="" <?php selected($facebook_action, ''); ?>>like</option>
+                <option value="recommend" <?php selected($facebook_action, 'recommend'); ?>>recommend</option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <th><?php _e('Example'); ?></th>
+        <td><?php SocialButtons::facebook(); ?></td>
+    </tr>
+
+    <tr>
+        <th><?php _e('More info about') ?></th>
+        <td>
+            <a href="https://developers.facebook.com/docs/reference/plugins/like/" target="_blank"
+               class="button-secondary">Facebook button</a>
+        </td>
+    </tr>
+</table>
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<table class="form-table">
+    <tr>
+        <td colspan="2"><h3>Common</h3></td>
+    </tr>
+    <tr oninvalid="top">
+        <th scope="row"><?php _e('Add buttons') ?></th>
+        <td>
+            <select name="soc_add_buttons" id="soc_add_buttons">
+                <option value="manually" <?php selected($soc_add_buttons, 'manually'); ?>>manually</option>
+                <option value="before" <?php selected($soc_add_buttons, 'before'); ?>>before</option>
+                <option value="after" <?php selected($soc_add_buttons, 'after'); ?>>after</option>
+            </select>
+            <label for="soc_add_buttons"><?php _e('content')?></label>
+
+        </td>
+
+    </tr>
+
+	<?php if ($soc_add_buttons === 'manually') { ?>
+    <tr>
+        <th><?php _e('Manualy')?></th>
+        <td>
+            <p><?php _e('Add somewhere to you single post template php file')?> </p>
+            <pre>SocialButtons::facebook();</pre>
+            <pre>SocialButtons::googleplus();</pre>
+            <pre>SocialButtons::twitter();</pre>
+        </td>
+    </tr>
+	<?php } ?>
+
+    <tr>
+        <th scope="row"><?php _e('Add to') ?></th>
+        <td>
+					<?php
+					$post_types = get_post_types(array('public' => true, 'show_ui' => true), 'objects');
+					$i = 1;
+					foreach ($post_types as $post_type) {
+						?>
+              <label for="soc_insert_to<?php echo '-' . $i?>">
+                  <input name="soc_insert_to[]" type="checkbox" id="soc_insert_to<?php echo '-' . $i?>"
+                         value="<?php esc_attr_e($post_type->name)?>"
+										<?php if (in_array($post_type->name, (array)$soc_insert_to)) echo 'checked="checked"' ?>/>
+								<?php echo $post_type->labels->name ?></label><br>
+						<?php $i++;
+					}?>
+        </td>
+    </tr>
+
+</table>
+
+<?php submit_button(); ?>
+
+</form>
+
+</div>
+	

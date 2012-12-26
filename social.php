@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: SocialButtons
-Version: 1.0
+Plugin Name: omSocialButtons
+Version: 1.1
 Plugin URI: http://www.omdesign.cz/
 Description: Add Twitter, Facebook and Google Plus to all posts
 Author: <a href="http://www.omdesign.cz/kontakt">Roman Ožana</a>

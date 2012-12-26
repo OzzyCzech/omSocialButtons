@@ -1,6 +1,7 @@
 <div class="facebook">
-    <div class="fb-like" data-href="<?php esc_attr_e($permalink)?>"
+	<div class="fb-like"
 			<?php
+			SocialButtons::attr('data-href', $permalink);
 			SocialButtons::attr('data-colorscheme', $facebook_colorscheme);
 			SocialButtons::attr('data-width', (int)$facebook_width);
 			SocialButtons::attr('data-send', ($facebook_send) ? 'true' : null);

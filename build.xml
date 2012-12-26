@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build" name="omsocialbuttons">
+
+  <target name="build">
+    <delete file="${basedir}/../${ant.project.name}.zip" />
+    <zip destfile="${basedir}/../${ant.project.name}.zip" basedir="${basedir}" update="true"
+         includes="**/*" excludesfile="build.xml">
+      <zipfileset dir="${basedir}"/>
+    </zip>
+  </target>
+
+</project>

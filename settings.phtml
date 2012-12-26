@@ -3,50 +3,53 @@ require_once dirname(__FILE__) . '/google/header.phtml';
 require_once dirname(__FILE__) . '/facebook/header.phtml';
 
 $langs = array(
-	"" => 'Select language',
-	"fr" => 'French - français',
-	"en" => 'English', // default
-	//"ar" => 'Arabic - العربية',
-	//"ja" => 'Japanese - 日本語',
-	"es" => 'Spanish - Español',
-	"de" => 'German - Deutsch',
-	"it" => 'Italian - Italiano',
-	//"id" => 'Indonesian - Bahasa Indonesia',
-	"pt" => 'Portuguese - Português',
-	//"ko" => 'Korean - 한국어',
-	//"tr" => 'Turkish - Türkçe',
-	"ru" => 'Russian - Русский',
-	"nl" => 'Dutch - Nederlands',
-	//"fil" => 'Filipino - Filipino',
-	//"msa" => 'Malay - Bahasa Melayu',
-	//"zh-tw" => 'Traditional Chinese - 繁體中文',
-	//"zh-cn" => 'Simplified Chinese - 简体中文',
-	//"hi" => 'Hindi - हिन्दी',
-	"no" => 'Norwegian - Norsk',
-	"sv" => 'Swedish - Svenska',
-	"fi" => 'Finnish - Suomi',
-	"da" => 'Danish - Dansk',
-	"pl" => 'Polish - Polski',
-	"hu" => 'Hungarian - Magyar',
-	//"fa" => 'Farsi - فارسی',
-	//"he" => 'Hebrew - עִבְרִית',
-	//"ur" => 'Urdu - اردو',
-	//"th" => 'Thai - ภาษาไทย',
-	//"uk" => 'Ukrainian - Українська мова',
-	//"ca" => 'Catalan - català',
-	//"el" => 'Greek - Ελληνικά',
-	//"eu" => 'Basque - Euskara',
-	"cs" => 'Czech - Čeština'
+  "" => 'Select language',
+  "fr" => 'French - français',
+  "en" => 'English', // default
+  //"ar" => 'Arabic - العربية',
+  //"ja" => 'Japanese - 日本語',
+  "es" => 'Spanish - Español',
+  "de" => 'German - Deutsch',
+  "it" => 'Italian - Italiano',
+  //"id" => 'Indonesian - Bahasa Indonesia',
+  "pt" => 'Portuguese - Português',
+  //"ko" => 'Korean - 한국어',
+  //"tr" => 'Turkish - Türkçe',
+  "ru" => 'Russian - Русский',
+  "nl" => 'Dutch - Nederlands',
+  //"fil" => 'Filipino - Filipino',
+  //"msa" => 'Malay - Bahasa Melayu',
+  //"zh-tw" => 'Traditional Chinese - 繁體中文',
+  //"zh-cn" => 'Simplified Chinese - 简体中文',
+  //"hi" => 'Hindi - हिन्दी',
+  "no" => 'Norwegian - Norsk',
+  "sv" => 'Swedish - Svenska',
+  "fi" => 'Finnish - Suomi',
+  "da" => 'Danish - Dansk',
+  "pl" => 'Polish - Polski',
+  "hu" => 'Hungarian - Magyar',
+  //"fa" => 'Farsi - فارسی',
+  //"he" => 'Hebrew - עִבְרִית',
+  //"ur" => 'Urdu - اردو',
+  //"th" => 'Thai - ภาษาไทย',
+  //"uk" => 'Ukrainian - Українська мова',
+  //"ca" => 'Catalan - català',
+  //"el" => 'Greek - Ελληνικά',
+  //"eu" => 'Basque - Euskara',
+  "cs" => 'Czech - Čeština'
 );
 
 if (!current_user_can('manage_options'))
-	wp_die(__('You do not have sufficient permissions to manage options for this site.'));
+  wp_die(__('You do not have sufficient permissions to manage options for this site.'));
 ?>
 
-<style type="text/css">h3{ border-bottom: 1px solid #ddd;}</style>
+<style type="text/css">h3 {
+    border-bottom: 1px solid #ddd;
+}</style>
+
 <div class="wrap">
 <?php screen_icon(); ?>
-<h2>Social Buttons Settings</h2>
+<h2><?php _e('omSocialButtons Settings', 'oms')?></h2>
 
 <form action="options-general.php?page=social/social.php" method="post">
 
@@ -63,7 +66,7 @@ if (!current_user_can('manage_options'))
             <label for="twitter_enable">
                 <input name="twitter_enable" type="checkbox" id="twitter_enable"
                        value="1" <?php checked('1', $twitter_enable); ?> />
-							<?php _e('enable button') ?></label>
+              <?php _e('enable button') ?></label>
         </td>
     </tr>
 
@@ -91,12 +94,12 @@ if (!current_user_can('manage_options'))
         <th scope="row"><label for="twitter_lang"><?php _e('Lang') ?></label></th>
         <td>
             <select id="twitter_lang" name="twitter_lang">
-							<?php
-							foreach ($langs as $lang => $title) {
-								echo '<option value="' . $lang . '" ' . selected(
-									$twitter_lang, $lang, false
-								) . '>' . $title . '</option>';
-							}?>
+              <?php
+              foreach ($langs as $lang => $title) {
+                echo '<option value="' . $lang . '" ' . selected(
+                  $twitter_lang, $lang, false
+                ) . '>' . $title . '</option>';
+              }?>
             </select>
         </td>
     </tr>
@@ -116,7 +119,7 @@ if (!current_user_can('manage_options'))
             <label for="twitter_size">
                 <input name="twitter_size" type="checkbox" id="twitter_size"
                        value="1" <?php checked('1', $twitter_size); ?> />
-							<?php _e('Large button') ?></label>
+              <?php _e('Large button') ?></label>
         </td>
     </tr>
 
@@ -169,7 +172,7 @@ if (!current_user_can('manage_options'))
             <label for="google_enable">
                 <input name="google_enable" type="checkbox" id="google_enable"
                        value="1" <?php checked('1', $google_enable); ?> />
-							<?php _e('enable button') ?></label>
+              <?php _e('enable button') ?></label>
         </td>
     </tr>
 
@@ -212,12 +215,12 @@ if (!current_user_can('manage_options'))
         <th scope="row"><label for="google_lang"><?php _e('Lang') ?></label></th>
         <td>
             <select id="google_lang" name="google_lang">
-							<?php
-							foreach ($langs as $lang => $title) {
-								echo '<option value="' . $lang . '" ' . selected(
-									$google_lang, $lang, false
-								) . '>' . $title . '</option>';
-							}?>
+              <?php
+              foreach ($langs as $lang => $title) {
+                echo '<option value="' . $lang . '" ' . selected(
+                  $google_lang, $lang, false
+                ) . '>' . $title . '</option>';
+              }?>
             </select>
         </td>
     </tr>
@@ -251,7 +254,7 @@ if (!current_user_can('manage_options'))
             <label for="facebook_enable">
                 <input name="facebook_enable" type="checkbox" id="facebook_enable"
                        value="1" <?php checked('1', $facebook_enable); ?> />
-							<?php _e('enable button') ?></label>
+              <?php _e('enable button') ?></label>
         </td>
     </tr>
 
@@ -272,22 +275,22 @@ if (!current_user_can('manage_options'))
             <label for="facebook_send">
                 <input name="facebook_send" type="checkbox" id="facebook_send"
                        value="1" <?php checked('1', $facebook_send); ?> />
-							<?php _e('send button') ?></label>
+              <?php _e('send button') ?></label>
         </td>
     </tr>
 
     <tr valign="top">
-        <th scope="row"><?php _e('Show faces') ?></th>
+        <th scope="row"><?php _e('Show faces', 'oms') ?></th>
         <td>
             <label for="facebook_show_faces">
                 <input name="facebook_show_faces" type="checkbox" id="facebook_show_faces"
                        value="1" <?php checked('1', $facebook_show_faces); ?> />
-							<?php _e('show faces') ?></label>
+              <?php _e('show faces', 'oms') ?></label>
         </td>
     </tr>
 
     <tr valign="top">
-        <th scope="row"><?php _e('Color scheme') ?></th>
+        <th scope="row"><?php _e('Color scheme', 'oms') ?></th>
         <td>
             <select name="facebook_colorscheme" id="facebook_colorscheme">
                 <option value="" <?php selected($facebook_colorscheme, ''); ?>>Light</option>
@@ -367,7 +370,7 @@ if (!current_user_can('manage_options'))
 
     </tr>
 
-	<?php if ($soc_add_buttons === 'manually') { ?>
+  <?php if ($soc_add_buttons === 'manually') { ?>
     <tr>
         <th><?php _e('Manualy')?></th>
         <td>
@@ -377,23 +380,23 @@ if (!current_user_can('manage_options'))
             <pre>SocialButtons::twitter();</pre>
         </td>
     </tr>
-	<?php } ?>
+  <?php } ?>
 
     <tr>
         <th scope="row"><?php _e('Add to') ?></th>
         <td>
-					<?php
-					$post_types = get_post_types(array('public' => true, 'show_ui' => true), 'objects');
-					$i = 1;
-					foreach ($post_types as $post_type) {
-						?>
+          <?php
+          $post_types = get_post_types(array('public' => true, 'show_ui' => true), 'objects');
+          $i = 1;
+          foreach ($post_types as $post_type) {
+            ?>
               <label for="soc_insert_to<?php echo '-' . $i?>">
                   <input name="soc_insert_to[]" type="checkbox" id="soc_insert_to<?php echo '-' . $i?>"
                          value="<?php esc_attr_e($post_type->name)?>"
-										<?php if (in_array($post_type->name, (array)$soc_insert_to)) echo 'checked="checked"' ?>/>
-								<?php echo $post_type->labels->name ?></label><br>
-						<?php $i++;
-					}?>
+                    <?php if (in_array($post_type->name, (array)$soc_insert_to)) echo 'checked="checked"' ?>/>
+                <?php echo $post_type->labels->name ?></label><br>
+            <?php $i++;
+          }?>
         </td>
     </tr>
 

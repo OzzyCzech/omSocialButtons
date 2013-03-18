@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: omSocialButtons
-Version: 1.1
+Version: v1.1.1
 Plugin URI: http://www.omdesign.cz/
 Description: Add Twitter, Facebook and Google Plus to all posts
 Author: <a href="http://www.omdesign.cz/kontakt">Roman Ožana</a>
@@ -99,7 +99,7 @@ class SocialButtons {
 	public function __construct() {
 		add_action('admin_menu', array($this, 'admin_menu'));
 		add_action('wp_head', array($this, 'header'));
-		add_filter('loop_start', array($this, 'loop_start'));
+		add_action('wp_footer', array($this, 'wp_footer'));
 		add_filter('the_content', array($this, 'the_content'));
 
 		if ($options = get_option(__CLASS__, null)) {
@@ -115,11 +115,10 @@ class SocialButtons {
 	}
 
 	/**
-	 * Start loop of posts
+	 * Print scripts in footer
 	 */
-	public function loop_start() {
-		extract($this->options);
-		require dirname(__FILE__) . '/facebook/header.phtml';
+	public function wp_footer() {
+		echo '<!-- Facebook --><div id="fb-root"></div><!-- Facebook -->';
 	}
 
 	/**
@@ -127,6 +126,7 @@ class SocialButtons {
 	 */
 	public function header() {
 		extract($this->options);
+		require dirname(__FILE__) . '/facebook/header.phtml';
 		require dirname(__FILE__) . '/google/header.phtml';
 	}
 
@@ -143,6 +143,7 @@ class SocialButtons {
 		}
 
 		extract($this->options);
+		$action = 'options-general.php?page=' . plugin_basename(__FILE__);
 		require dirname(__FILE__) . '/settings.phtml';
 	}
 
@@ -167,7 +168,7 @@ class SocialButtons {
 
 		//return '<pre>' . htmlentities($social) . '</pre>';
 
-		if (!in_array(get_post_type(), $this->options['soc_insert_to'])) return $content;
+		if (!in_array(get_post_type(), (array)$this->options['soc_insert_to'])) return $content;
 
 		switch ($this->options['soc_add_buttons']) {
 			case 'before':

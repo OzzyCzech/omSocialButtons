@@ -49,9 +49,9 @@ if (!current_user_can('manage_options'))
 
 <div class="wrap">
 <?php screen_icon(); ?>
-<h2><?php _e('omSocialButtons Settings', 'oms')?></h2>
+<h2><?php _e('Social Buttons Settings', 'oms')?></h2>
 
-<form action="options-general.php?page=social/social.php" method="post">
+<form action="<?php echo $action ?>" method="post">
 
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 

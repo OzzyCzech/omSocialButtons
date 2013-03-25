@@ -64,9 +64,10 @@ class Buttons {
 	public $options;
 
 	public function __construct() {
-		$this->buttons['facebook'] = new Facebook();
+
 		$this->buttons['googleplus'] = new GooglePlus();
 		$this->buttons['twitter'] = new Twitter();
+		$this->buttons['facebook'] = new Facebook();
 
 		$this->options = new CommonOptions('omSocialButtons');
 

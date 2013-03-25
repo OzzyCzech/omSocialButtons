@@ -7,7 +7,7 @@ use omSocialButtons\Button;
  *
  * @author Roman Ozana <ozana@omdesign.cz>
  */
-class Facebook extends Options implements Button {
+class Facebook implements Button {
 
 	/** @var Options */
 	public $options;
@@ -23,8 +23,18 @@ class Facebook extends Options implements Button {
 	 * @return mixed
 	 */
 	public function getSettingsFormHtml() {
-		extract($this->getOptions());
 		include __DIR__ . '/header.phtml';
+		include __DIR__ . '/settings.phtml';
+	}
+
+
+	/**
+	 * Nastavi settings
+	 *
+	 * @return mixed
+	 */
+	public function updateSettingsForm() {
+
 	}
 
 	/**
@@ -46,32 +56,19 @@ class Facebook extends Options implements Button {
 
 
 	/**
-	 * Nastavi settings
-	 *
-	 * @return mixed
-	 */
-	public function updateSettingsForm() {
-		require_once __DIR__ . '/settings.phtml';
-	}
-
-	/**
 	 * Return button HTML
 	 *
 	 * @return null
 	 */
 	public function getButtonHtml() {
-		// TODO: Implement getButtonHtml() method.
+		if ($this->isEnable()) require_once __DIR__ . '/button.phtml';
 	}
-
-
-	// -------------------------------------------------------------------------------------------------------------------
 
 	public function wp_footer() {
 		echo '<!-- Facebook --><div id="fb-root"></div><!-- Facebook -->';
 	}
 
 	public function wp_head() {
-		extract($this->getOptions());
 		require_once __DIR__ . '/header.phtml';
 	}
 

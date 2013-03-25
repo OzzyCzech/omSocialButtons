@@ -118,9 +118,9 @@ class Buttons {
 
 		//return '<pre>' . htmlentities($social) . '</pre>';
 
-		if (!in_array(get_post_type(), (array)$this->options['insert_to'])) return $content;
+		if (!in_array(get_post_type(), (array)$this->options->insert_to)) return $content;
 
-		switch ($this->options['insert_to']) {
+		switch ($this->options->add_button) {
 			case 'before':
 				return $social . $content;
 			case 'after':

@@ -1,21 +1,24 @@
+<?php /** @var \omSocialButtons\twitter\Twitter $this */?>
 <div class="twitter">
-    <a href="https://twitter.com/share" class="twitter-share-button"<?php
-	    SocialButtons::attr('data-via', $twitter_via);
-	    SocialButtons::attr('data-related', $twitter_related);
-	    SocialButtons::attr('data-url', $permalink);
-	    SocialButtons::attr('data-lang', $twitter_lang);
-	    SocialButtons::attr('data-text', get_the_title() . $twitter_text);
-	    SocialButtons::attr('data-size', ($twitter_size) ? 'large' : null);
-	    SocialButtons::attr('data-count', $twitter_count);
-	    SocialButtons::attr('data-hashtags', $twitter_hashtags);
-	    ?>></a>
-    <script>!function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (!d.getElementById(id)) {
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }
-    }(document, "script", "twitter-wjs");</script>
+	<a href="https://twitter.com/share" class="twitter-share-button"<?php
+		use omSocialButtons\Html;
+
+		Html::attr('data-via', $this->options->via);
+		Html::attr('data-related', $this->options->related);
+		Html::attr('data-url', apply_filters('share_url', get_permalink()));
+		Html::attr('data-lang', $this->options->lang);
+		Html::attr('data-text', get_the_title() . $this->options->text);
+		Html::attr('data-size', ($this->options->size) ? 'large' : null);
+		Html::attr('data-count', $this->options->count);
+		Html::attr('data-hashtags', $this->options->hashtags);
+		?>></a>
+	<script>!function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (!d.getElementById(id)) {
+				js = d.createElement(s);
+				js.id = id;
+				js.src = "//platform.twitter.com/widgets.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}
+		}(document, "script", "twitter-wjs");</script>
 </div>

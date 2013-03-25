@@ -1,9 +1,10 @@
 <div class="google">
-    <div class="g-plusone"
-      <?php
-      SocialButtons::attr('data-href', $permalink);
-      SocialButtons::attr('data-width', $google_width);
-      SocialButtons::attr('data-annotation', $google_annotation);
-      SocialButtons::attr('data-size', $google_size);
-      ?>></div>
+	<div class="g-plusone"
+		<?php
+		use omSocialButtons\Html;
+		Html::attr('data-href', apply_filters('share_url', get_permalink()));
+		Html::attr('data-width', $google_width);
+		Html::attr('data-annotation', $google_annotation);
+		Html::attr('data-size', $google_size);
+		?>></div>
 </div>

@@ -1,13 +1,15 @@
+<? /** @var \omSocialButtons\facebook\Facebook $this */?>
 <div class="facebook">
 	<div class="fb-like"
-			<?php
-			SocialButtons::attr('data-href', $permalink);
-			SocialButtons::attr('data-colorscheme', $facebook_colorscheme);
-			SocialButtons::attr('data-width', (int)$facebook_width);
-			SocialButtons::attr('data-send', ($facebook_send) ? 'true' : null);
-			SocialButtons::attr('data-show-faces', ($facebook_show_faces) ? 'true' : null);
-			SocialButtons::attr('data-font', $facebook_font);
-			SocialButtons::attr('data-action', $facebook_action);
-			SocialButtons::attr('data-layout', $facebook_layout);
-			?>></div>
+		<?php
+		use omSocialButtons\Html;
+		Html::attr('data-href', apply_filters('share_url', get_permalink()));
+		Html::attr('data-colorscheme', $this->options->colorscheme);
+		Html::attr('data-width', (int)$this->options->width);
+		Html::attr('data-send', ($this->options->send) ? 'true' : null);
+		Html::attr('data-show-faces', ($this->options->show_faces) ? 'true' : null);
+		Html::attr('data-font', $this->options->font);
+		Html::attr('data-action', $this->options->action);
+		Html::attr('data-layout', $this->options->layout);
+		?>></div>
 </div>

@@ -1,0 +1,84 @@
+<?php
+/**
+ * @var $this \omSocialButtons\google\GooglePlus
+ */
+?>
+<table class="form-table">
+	<tr>
+		<td colspan="2"><h3>Google plus</h3></td>
+	</tr>
+
+
+	<tr valign="top">
+		<th scope="row"><?php _e('Enable') ?></th>
+		<td>
+			<label for="googleplus_enable">
+				<input name="googleplus_enable" type="checkbox" id="googleplus_enable"
+				       value="1" <?php checked('1', $this->isEnable()); ?> />
+				<?php _e('enable button') ?></label>
+		</td>
+	</tr>
+
+	<tr valign="top">
+		<th scope="row"><?php _e('Size') ?></th>
+		<td>
+			<select name="googleplus_size" id="googleplus_size">
+				<option value="small" <?php selected($this->options->size, 'small'); ?>>Small</option>
+				<option value="medium" <?php selected($this->options->size, 'medium'); ?>>Medium</option>
+				<option value="" <?php selected($this->options->size, ''); ?>>Normal</option>
+				<option value="tall" <?php selected($this->options->size, 'tall'); ?>>Tall</option>
+			</select>
+		</td>
+	</tr>
+
+	<tr valign="top">
+		<th scope="row"><?php _e('Annotation') ?></th>
+		<td>
+			<select name="googleplus_annotation" id="googleplus_annotation">
+				<option value="inline" <?php selected($this->options->annotation, 'inline'); ?>>Inline</option>
+				<option value="" <?php selected($this->options->annotation, ''); ?>>Bubble</option>
+				<option value="none" <?php selected($this->options->annotation, 'none'); ?>>None</option>
+			</select>
+		</td>
+	</tr>
+
+
+	<tr valign="top">
+		<th scope="row"><?php _e('Width') ?></th>
+		<td>
+			<input name="googleplus_width" type="text" id="googleplus_width"
+			       value="<?php echo esc_attr($this->options->width); ?>"
+			       class="regular-text"/>
+			<label for="googleplus_width">px</label>
+
+		</td>
+	</tr>
+
+	<tr valign="top">
+		<th scope="row"><label for="googleplus_lang"><?php _e('Lang') ?></label></th>
+		<td>
+			<select id="googleplus_lang" name="googleplus_lang">
+				<?php
+				foreach (\omSocialButtons\Buttons::$langs as $lang => $title) {
+					echo '<option value="' . $lang . '" ' . selected(
+						$this->options->lang, $lang, false
+					) . '>' . $title . '</option>';
+				}?>
+			</select>
+		</td>
+	</tr>
+
+	<tr>
+		<th><?php _e('Example'); ?></th>
+		<td><?php $this->getButtonHtml(); ?></td>
+	</tr>
+
+	<tr>
+		<th><?php _e('More info about') ?></th>
+		<td><a href="https://developers.google.com/+/plugins/+1button/" target="_blank" class="button-secondary">Google+
+				button</a>
+		</td>
+	</tr>
+
+
+</table>

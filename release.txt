@@ -3,7 +3,7 @@ Release notes
 
 1.1
 - bugfixes in Google Plus Icon
-- rename plugin to omSocialButtons (there is another plugin with name SocialButtons)
+- rename plugin to omSocialButtons (there is another plugin with name Buttons)
 
 1.0
 - first public version with Google Plus, Facebook and Twitter button for Wordpress

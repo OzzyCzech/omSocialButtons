@@ -40,9 +40,7 @@
 			<select id="twitter_lang" name="twitter_lang">
 				<?php
 				foreach (\omSocialButtons\Buttons::$langs as $lang => $title) {
-					echo '<option value="' . $lang . '" ' . selected(
-						$this->options->lang, $lang, false
-					) . '>' . $title . '</option>';
+					echo '<option value="' . $lang . '" ' . selected(	$lang, $this->options->lang, false) . '>' . $title . '</option>' . PHP_EOL;
 				}?>
 			</select>
 		</td>
@@ -61,9 +59,10 @@
 		<th scope="row"><?php _e('Size') ?></th>
 		<td>
 			<label for="twitter_size">
-				<input name="twitter_size" type="checkbox" id="twitter_size"
-				       value="1" <?php checked('1', $this->options->size); ?> />
-				<?php _e('Large button') ?></label>
+				<select name="twitter_size" id="twitter_count">
+					<option value="" <?php selected('', $this->options->size); ?>>normal</option>
+					<option value="large" <?php selected('large', $this->options->size); ?>>Large</option>
+				</select>
 		</td>
 	</tr>
 
@@ -71,9 +70,10 @@
 		<th scope="row"><?php _e('Count') ?></th>
 		<td>
 			<select name="twitter_count" id="twitter_count">
-				<option value="" <?php selected($this->options->count, ''); ?>>None</option>
-				<option value="horizontal" <?php selected($this->options->count, 'horizontal'); ?>>Horizontal</option>
-				<option value="vertical" <?php selected($this->options->count, 'vertical'); ?>>Vertical</option>
+				<option value="" <?php selected('', $this->options->count); ?>>None</option>
+				<option value="" <?php selected('', $this->options->count); ?>>None</option>
+				<option value="horizontal" <?php selected('horizontal', $this->options->count); ?>>Horizontal</option>
+				<option value="vertical" <?php selected('vertical', $this->options->count); ?>>Vertical</option>
 			</select>
 		</td>
 

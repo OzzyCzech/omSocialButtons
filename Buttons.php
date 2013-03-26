@@ -136,17 +136,19 @@ class Buttons {
 	 *
 	 * @param $name
 	 * @param $args
-	 * @return Button|null
+	 * @return IButton|null
 	 */
 	public function __call($name, $args) {
 		if (array_keys($this->buttons, $name)) {
 			return $this->buttons[$name]; // return button if exists
 		}
 
-		foreach ($this->buttons as $button) {
-			/** @var Button $button */
-			call_user_func_array(array($button, $name), $args); // call selected function on all buttons
+		$results = array();
+		foreach ($this->buttons as $key => $button) {
+			/** @var IButton $button */
+			$results[$key] = call_user_func_array(array($button, $name), $args); // call selected function on all buttons
 		}
+		return $results;
 	}
 }
 

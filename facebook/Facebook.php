@@ -1,13 +1,13 @@
 <?php
 namespace omSocialButtons\facebook;
 
-use omSocialButtons\Button;
+use omSocialButtons\IButton;
 
 /**
  *
  * @author Roman Ozana <ozana@omdesign.cz>
  */
-class Facebook implements Button {
+class Facebook implements IButton {
 
 	/** @var Options */
 	public $options;
@@ -34,7 +34,8 @@ class Facebook implements Button {
 	 * @return mixed
 	 */
 	public function updateSettingsForm() {
-
+		$this->options->setByArray($_POST, 'facebook_%s');
+		$this->options->saveOptions();
 	}
 
 	/**
@@ -92,10 +93,10 @@ class Facebook implements Button {
 class Options extends \omSocialButtons\Options {
 
 	protected $options = array(
-		'enable' => '1',
+		'enable' => true,
 		'width' => 450,
-		'show_faces' => '',
-		'send' => '', // send button
+		'show_faces' => false,
+		'send' => false, // send button
 		'layout' => 'button_count', // standard, button_count, box_count
 		'action' => '', // like or recommend
 		'colorscheme' => '', // light or dark

@@ -3,7 +3,7 @@ namespace omSocialButtons;
 /**
  * @author Roman Ozana <ozana@omdesign.cz>
  */
-interface Button {
+interface IButton {
 	/**
 	 * Register all hooks
 	 *

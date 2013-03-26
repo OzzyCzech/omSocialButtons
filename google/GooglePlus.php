@@ -1,11 +1,11 @@
 <?php
 namespace omSocialButtons\google;
-use omSocialButtons\Button;
+use omSocialButtons\IButton;
 
 /**
  * @author Roman Ožana <ozana@omdesign.cz>
  */
-class GooglePlus implements Button {
+class GooglePlus implements IButton {
 
 	/** @var \omSocialButtons\google\Options */
 	public $options;
@@ -51,11 +51,8 @@ class GooglePlus implements Button {
 	 * @return mixed
 	 */
 	public function updateSettingsForm() {
-		$this->options->enable = (bool)$_POST['googleplus_enable'];
-		$this->options->width = $_POST['googleplus_width'];
-		$this->options->size = (int)$_POST['googleplus_size'];
-		$this->options->annotation = $_POST['googleplus_annotation'];
-		$this->options->lang = $_POST['googleplus_lang'];
+		$this->options->setByArray($_POST, 'googleplus_%s');
+		$this->options->saveOptions();
 	}
 
 	/**

@@ -1,6 +1,5 @@
 <?php
 namespace omSocialButtons;
-
 /**
  * Wordpress options class
  *
@@ -34,6 +33,23 @@ class Options {
 	 */
 	public function getOptions() {
 		return $this->options;
+	}
+
+
+	/**
+	 * Update options by post data
+	 *
+	 * @param array $data
+	 * @param string $name
+	 * @param bool $settype
+	 */
+	public function setByArray(array $data, $name = '%s', $settype = true) {
+		foreach ($this->options as $key => $oldvalue) {
+			$param = sprintf($name, $key);
+			$value = array_key_exists($param, $data) ? $data[$param] : null;
+			if ($settype && $value !== null) settype($value, gettype($oldvalue)); // use same type as before except null
+			$this->options[$key] = $value;
+		}
 	}
 
 	/**

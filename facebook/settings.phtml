@@ -10,7 +10,7 @@
 		<td>
 			<label for="facebook_enable">
 				<input name="facebook_enable" type="checkbox" id="facebook_enable"
-				       value="1" <?php checked('1', $this->options->enable); ?> />
+				       value="1" <?php checked(true, $this->options->enable); ?> />
 				<?php _e('enable button') ?></label>
 		</td>
 	</tr>
@@ -31,7 +31,7 @@
 		<td>
 			<label for="facebook_send">
 				<input name="facebook_send" type="checkbox" id="facebook_send"
-				       value="1" <?php checked('1', $this->options->send); ?> />
+				       value="1" <?php checked(true, $this->options->send); ?> />
 				<?php _e('send button') ?></label>
 		</td>
 	</tr>
@@ -41,7 +41,7 @@
 		<td>
 			<label for="facebook_show_faces">
 				<input name="facebook_show_faces" type="checkbox" id="facebook_show_faces"
-				       value="1" <?php checked('1', $this->options->show_faces); ?> />
+				       value="1" <?php checked(true, $this->options->show_faces); ?> />
 				<?php _e('show faces', 'oms') ?></label>
 		</td>
 	</tr>
@@ -50,8 +50,8 @@
 		<th scope="row"><?php _e('Color scheme', 'oms') ?></th>
 		<td>
 			<select name="facebook_colorscheme" id="facebook_colorscheme">
-				<option value="" <?php selected($this->options->colorscheme, ''); ?>>Light</option>
-				<option value="dark" <?php selected($this->options->colorscheme, 'dark'); ?>>Dark</option>
+				<option value="" <?php selected('', $this->options->colorscheme); ?>>Light</option>
+				<option value="dark" <?php selected('dark', $this->options->colorscheme); ?>>Dark</option>
 			</select>
 		</td>
 	</tr>
@@ -60,9 +60,9 @@
 		<th scope="row"><?php _e('Layout') ?></th>
 		<td>
 			<select name="facebook_layout" id="facebook_layout">
-				<option value="" <?php selected($this->options->layout, ''); ?>>standard</option>
-				<option value="button_count" <?php selected($this->options->layout, 'button_count'); ?>>button_count</option>
-				<option value="box_count" <?php selected($this->options->layout, 'box_count'); ?>>box_count</option>
+				<option value="" <?php selected('', $this->options->layout); ?>>standard</option>
+				<option value="button_count" <?php selected('button_count', $this->options->layout); ?>>button_count</option>
+				<option value="box_count" <?php selected('box_count', $this->options->layout); ?>>box_count</option>
 			</select>
 		</td>
 	</tr>
@@ -71,13 +71,13 @@
 		<th scope="row"><?php _e('Font') ?></th>
 		<td>
 			<select name="facebook_font" id="facebook_font">
-				<option value="" <?php selected($this->options->font, ''); ?>></option>
-				<option value="arial" <?php selected($this->options->font, 'arial'); ?>>arial</option>
-				<option value="lucida grande" <?php selected($this->options->font, 'lucida grande'); ?>>lucida grande</option>
-				<option value="segoe ui" <?php selected($this->options->font, 'segoe ui'); ?>>segoe ui</option>
-				<option value="tahoma" <?php selected($this->options->font, 'tahoma'); ?>>tahoma</option>
-				<option value="trebuchet ms" <?php selected($this->options->font, 'trebuchet ms'); ?>>trebuchet ms</option>
-				<option value="verdana" <?php selected($this->options->font, 'verdana'); ?>>verdana</option>
+				<option value="" <?php selected('', $this->options->font); ?>></option>
+				<option value="arial" <?php selected('arial', $this->options->font); ?>>arial</option>
+				<option value="lucida grande" <?php selected('lucida grande', $this->options->font); ?>>lucida grande</option>
+				<option value="segoe ui" <?php selected('segoe ui', $this->options->font); ?>>segoe ui</option>
+				<option value="tahoma" <?php selected('tahoma', $this->options->font); ?>>tahoma</option>
+				<option value="trebuchet ms" <?php selected('trebuchet ms', $this->options->font); ?>>trebuchet ms</option>
+				<option value="verdana" <?php selected('verdana', $this->options->font); ?>>verdana</option>
 			</select>
 		</td>
 	</tr>

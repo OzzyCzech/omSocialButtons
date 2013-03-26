@@ -18,6 +18,7 @@ if (!class_exists('WP')) {
 	header('HTTP/1.1 403 Forbidden');
 	exit;
 }
+define('SB', 'omSocialButtons');
 
 require_once 'Options.php';
 require_once 'IButton.php';
@@ -85,7 +86,7 @@ class Buttons {
 			$this->options->setByArray($_POST);
 			$this->options->saveOptions();
 
-			echo '<div class="updated"><p><strong>' . __('SocialButtons setting save') . '</strong></p></div>';
+			echo '<div class="updated"><p><strong>' . __('SocialButtons setting save', SB) . '</strong></p></div>';
 		}
 
 		$action = 'options-general.php?page=' . plugin_basename(__FILE__);
@@ -103,15 +104,22 @@ class Buttons {
 	public function the_content($content) {
 		ob_start();
 		$this->getButtonHtml();
-		$social = '<div class="social-buttons"><div class="wrapper">' . ob_get_contents() . '</div></div>';
+		$social = '<div class="social-buttons"><div class="wrapper">' .
+			apply_filters('omSocialButtonsContent', ob_get_contents()) .
+			'</div></div>';
 		ob_end_clean();
 
 		//return '<pre>' . htmlentities($social) . '</pre>';
 
+		// Ensure the correct page type and place
 		if (
-			!in_array(get_post_type(), (array)$this->options->insert_to) ||
-			!is_single()
-		) return $content;
+			(!in_array(get_post_type(), (array)$this->options->insert_to)) ||
+			(is_home() && !$this->options->on_home) ||
+			(is_archive() && !$this->options->on_archive) ||
+			(is_single() && !$this->options->on_single)
+		) {
+			return $content;
+		}
 
 		switch ($this->options->add_button) {
 			case 'both':
@@ -165,11 +173,20 @@ class Html {
  *
  * @property string $add_button
  * @property array $insert_to
+ * @property bool $on_home
+ * @property bool $on_single
+ * @property bool $on_archive
  *
  * @author Roman Ožana <ozana@omdesign.cz>
  */
 class CommonOptions extends Options {
-	protected $options = array('add_button' => 'after', 'insert_to' => array('page', 'post'));
+	protected $options = array(
+		'add_button' => 'after',
+		'insert_to' => array('page', 'post'),
+		'on_single' => true,
+		'on_home' => false,
+		'on_archive' => false,
+	);
 }
 
 require_once 'facebook/Facebook.php';

@@ -10,17 +10,17 @@
 
 
 	<tr valign="top">
-		<th scope="row"><?php _e('Enable') ?></th>
+		<th scope="row"><?php _e('Enable', SB) ?></th>
 		<td>
 			<label for="googleplus_enable">
 				<input name="googleplus_enable" type="checkbox" id="googleplus_enable"
 				       value="1" <?php checked(true, $this->isEnable()); ?> />
-				<?php _e('enable button') ?></label>
+				<?php _e('enable button', SB) ?></label>
 		</td>
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><?php _e('Size') ?></th>
+		<th scope="row"><?php _e('Size', SB) ?></th>
 		<td>
 			<select name="googleplus_size" id="googleplus_size">
 				<option value="small" <?php selected($this->options->size, 'small'); ?>>Small</option>
@@ -32,7 +32,7 @@
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><?php _e('Annotation') ?></th>
+		<th scope="row"><?php _e('Annotation', SB) ?></th>
 		<td>
 			<select name="googleplus_annotation" id="googleplus_annotation">
 				<option value="inline" <?php selected($this->options->annotation, 'inline'); ?>>Inline</option>
@@ -44,7 +44,7 @@
 
 
 	<tr valign="top">
-		<th scope="row"><?php _e('Width') ?></th>
+		<th scope="row"><?php _e('Width', SB) ?></th>
 		<td>
 			<input name="googleplus_width" type="text" id="googleplus_width"
 			       value="<?php echo esc_attr($this->options->width); ?>"
@@ -55,7 +55,7 @@
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><label for="googleplus_lang"><?php _e('Lang') ?></label></th>
+		<th scope="row"><label for="googleplus_lang"><?php _e('Lang', SB) ?></label></th>
 		<td>
 			<select id="googleplus_lang" name="googleplus_lang">
 				<?php
@@ -69,12 +69,12 @@
 	</tr>
 
 	<tr>
-		<th><?php _e('Example'); ?></th>
+		<th><?php _e('Example', SB); ?></th>
 		<td><?php $this->getButtonHtml(); ?></td>
 	</tr>
 
 	<tr>
-		<th><?php _e('More info about') ?></th>
+		<th><?php _e('More info about', SB) ?></th>
 		<td><a href="https://developers.google.com/+/plugins/+1button/" target="_blank" class="button-secondary">Google+
 				button</a>
 		</td>

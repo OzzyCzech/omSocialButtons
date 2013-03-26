@@ -5,17 +5,17 @@
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><?php _e('Enable') ?></th>
+		<th scope="row"><?php _e('Enable', SB) ?></th>
 		<td>
 			<label for="twitter_enable">
 				<input name="twitter_enable" type="checkbox" id="twitter_enable"
 				       value="1" <?php checked(true, $this->options->enable); ?> />
-				<?php _e('enable button') ?></label>
+				<?php _e('enable button', SB) ?></label>
 		</td>
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><label for="twitter_via"><?php _e('Twitter via') ?></label></th>
+		<th scope="row"><label for="twitter_via"><?php _e('Twitter via', SB) ?></label></th>
 		<td>
 			<label for="twitter_via">@</label>
 			<input name="twitter_via" type="text" id="twitter_via"
@@ -25,7 +25,7 @@
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><label for="twitter_related"><?php _e('Related account') ?></label></th>
+		<th scope="row"><label for="twitter_related"><?php _e('Related account', SB) ?></label></th>
 		<td>
 			<input name="twitter_related" type="text" id="twitter_related"
 			       value="<?php echo esc_attr($this->options->related); ?>"
@@ -35,7 +35,7 @@
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><label for="twitter_lang"><?php _e('Lang') ?></label></th>
+		<th scope="row"><label for="twitter_lang"><?php _e('Lang', SB) ?></label></th>
 		<td>
 			<select id="twitter_lang" name="twitter_lang">
 				<?php
@@ -47,7 +47,7 @@
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><label for="twitter_text"><?php _e('Twitter text') ?></label></th>
+		<th scope="row"><label for="twitter_text"><?php _e('Twitter text', SB) ?></label></th>
 		<td>
 			<input name="twitter_text" type="text" id="twitter_text"
 			       value="<?php echo esc_attr($this->options->text); ?>"
@@ -56,7 +56,7 @@
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><?php _e('Size') ?></th>
+		<th scope="row"><?php _e('Size', SB) ?></th>
 		<td>
 			<label for="twitter_size">
 				<select name="twitter_size" id="twitter_count">
@@ -67,7 +67,7 @@
 	</tr>
 
 	<tr oninvalid="top">
-		<th scope="row"><?php _e('Count') ?></th>
+		<th scope="row"><?php _e('Count', SB) ?></th>
 		<td>
 			<select name="twitter_count" id="twitter_count">
 				<option value="" <?php selected('', $this->options->count); ?>>None</option>
@@ -81,7 +81,7 @@
 
 
 	<tr valign="top">
-		<th scope="row"><label for="twitter_hashtags"><?php _e('Twitter hashtags') ?></label></th>
+		<th scope="row"><label for="twitter_hashtags"><?php _e('Twitter hashtags', SB) ?></label></th>
 		<td>
 			<input name="twitter_hashtags" type="text" id="twitter_hashtags"
 			       value="<?php echo esc_attr($this->options->hashtags); ?>"
@@ -90,12 +90,12 @@
 	</tr>
 
 	<tr>
-		<th><?php _e('Example'); ?></th>
+		<th><?php _e('Example', SB); ?></th>
 		<td><?php $this->getButtonHtml()?></td>
 	</tr>
 
 	<tr>
-		<th><?php _e('More info about') ?></th>
+		<th><?php _e('More info about', SB) ?></th>
 		<td><a href="https://dev.twitter.com/docs/tweet-button" target="_blank" class="button-secondary">Tweet
 				button</a>
 		</td>

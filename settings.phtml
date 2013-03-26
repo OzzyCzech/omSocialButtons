@@ -1,7 +1,7 @@
 <?php
 /** @var \omSocialButtons\Buttons $this */
 if (!current_user_can('manage_options'))
-	wp_die(__('You do not have sufficient permissions to manage options for this site.'));
+	wp_die(__('You do not have sufficient permissions to manage options for this site.', SB));
 ?>
 
 <style type="text/css">
@@ -13,7 +13,7 @@ if (!current_user_can('manage_options'))
 
 <div class="wrap">
 	<?php screen_icon(); ?>
-	<h2><?php _e('Social Buttons Settings', 'oms')?></h2>
+	<h2><?php _e('Social Buttons Settings', SB)?></h2>
 
 	<form action="<?php echo $action ?>" method="post">
 
@@ -22,7 +22,7 @@ if (!current_user_can('manage_options'))
 				<td colspan="2"><h3>Common</h3></td>
 			</tr>
 			<tr oninvalid="top">
-				<th scope="row"><?php _e('Add buttons') ?></th>
+				<th scope="row"><?php _e('Add buttons', SB) ?></th>
 				<td>
 					<select name="add_button" id="add_button">
 						<option value="manually" <?php selected('manually', $this->options->add_button); ?>>manually</option>
@@ -30,24 +30,26 @@ if (!current_user_can('manage_options'))
 						<option value="after" <?php selected('after', $this->options->add_button); ?>>after</option>
 						<option value="both" <?php selected('both', $this->options->add_button); ?>>both (after & before)</option>
 					</select>
-					<label for="add_button"><?php _e('content')?></label>
+					<label for="add_button"><?php _e('content', SB)?></label>
 				</td>
 			</tr>
 
 			<?php if ($this->options->add_button === 'manually') { ?>
 				<tr>
-					<th><?php _e('Manualy')?></th>
+					<th><?php _e('Manualy', SB)?></th>
 					<td>
-						<p><?php _e('Add somewhere to you single post template php file')?> </p>
-						<pre>echo $omSocialButtons->facebook();</pre>
-						<pre>echo $omSocialButtons->googleplus();</pre>
-						<pre>echo $omSocialButtons->twitter();</pre>
+						<p><?php _e('Add somewhere to you single post template php file', SB)?> </p>
+						<pre>echo $omSocialButtons->facebook()->getButtonHtml();</pre>
+						<pre>echo $omSocialButtons->googleplus()->getButtonHtml();</pre>
+						<pre>echo $omSocialButtons->twitter()->getButtonHtml();</pre>
+						<p>or</p>
+						<pre>echo $omSocialButtons->getButtonHtml();</pre>
 					</td>
 				</tr>
 			<?php } ?>
 
 			<tr>
-				<th scope="row"><?php _e('Add to') ?></th>
+				<th scope="row"><?php _e('Add to', SB) ?></th>
 				<td>
 					<?php
 					$i = 1;
@@ -60,6 +62,33 @@ if (!current_user_can('manage_options'))
 							<?php echo $post_type->labels->name ?></label><br>
 						<?php $i++;
 					}?>
+				</td>
+			</tr>
+
+			<tr>
+				<th scope="row"><? _e('Show on', SB)?></th>
+				<td>
+					<label for="on_single">
+						<input name="on_single" type="checkbox" id="on_single" value="1" <?php checked(
+							true, $this->options->on_single
+						); ?> />
+						<?php _e('single page or post', SB) ?>
+					</label><br>
+
+					<label for="on_archive">
+						<input name="on_archive" type="checkbox" id="on_archive" value="1" <?php checked(
+							true, $this->options->on_archive
+						); ?> />
+						<?php _e('archive page', SB) ?>
+					</label><br>
+
+					<label for="on_home">
+						<input name="on_home" type="checkbox" id="on_home" value="1" <?php checked(
+							true, $this->options->on_home
+						); ?> />
+						<?php _e('home page', SB) ?>
+					</label>
+
 				</td>
 			</tr>
 

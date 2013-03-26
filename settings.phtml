@@ -1,6 +1,8 @@
 <?php
 /** @var \omSocialButtons\Buttons $this */
 
+echo $this->facebook()->getButtonHtml();
+
 if (!current_user_can('manage_options'))
 	wp_die(__('You do not have sufficient permissions to manage options for this site.'));
 ?>
@@ -8,6 +10,7 @@ if (!current_user_can('manage_options'))
 <style type="text/css">
 	h3 {
 		border-bottom: 1px solid #ddd;
+		padding-bottom: .2em;
 	}
 </style>
 
@@ -25,9 +28,10 @@ if (!current_user_can('manage_options'))
 				<th scope="row"><?php _e('Add buttons') ?></th>
 				<td>
 					<select name="add_button" id="add_button">
-						<option value="manually" <?php selected($this->options->add_button, 'manually'); ?>>manually</option>
-						<option value="before" <?php selected($this->options->add_button, 'before'); ?>>before</option>
-						<option value="after" <?php selected($this->options->add_button, 'after'); ?>>after</option>
+						<option value="manually" <?php selected('manually', $this->options->add_button); ?>>manually</option>
+						<option value="before" <?php selected('before', $this->options->add_button); ?>>before</option>
+						<option value="after" <?php selected('after', $this->options->add_button); ?>>after</option>
+						<option value="both" <?php selected('both', $this->options->add_button); ?>>both (after & before)</option>
 					</select>
 					<label for="add_button"><?php _e('content')?></label>
 				</td>
@@ -38,9 +42,9 @@ if (!current_user_can('manage_options'))
 					<th><?php _e('Manualy')?></th>
 					<td>
 						<p><?php _e('Add somewhere to you single post template php file')?> </p>
-						<pre>SocialButtons::facebook();</pre>
-						<pre>SocialButtons::googleplus();</pre>
-						<pre>SocialButtons::twitter();</pre>
+						<pre>echo $omSocialButtons->facebook();</pre>
+						<pre>echo $omSocialButtons->googleplus();</pre>
+						<pre>echo $omSocialButtons->twitter();</pre>
 					</td>
 				</tr>
 			<?php } ?>
@@ -62,7 +66,7 @@ if (!current_user_can('manage_options'))
 				</td>
 			</tr>
 
-			<?php $this->getSettingsFormHtml(); ?>
+			<?php $this->getOptionsForm(); ?>
 
 		</table>
 

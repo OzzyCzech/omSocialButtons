@@ -19,7 +19,7 @@ class GooglePlus implements IButton {
 	 *
 	 * @return null
 	 */
-	public function init() {
+	public function initButton() {
 		if (!$this->isEnable()) return;
 		add_action('wp_head', array($this, 'wp_head'));
 	}
@@ -40,7 +40,7 @@ class GooglePlus implements IButton {
 	 *
 	 * @return null
 	 */
-	public function getSettingsFormHtml() {
+	public function getOptionsForm() {
 		require_once __DIR__ . '/header.phtml';
 		require_once __DIR__ . '/settings.phtml';
 	}
@@ -50,7 +50,7 @@ class GooglePlus implements IButton {
 	 *
 	 * @return mixed
 	 */
-	public function updateSettingsForm() {
+	public function setOptionsData() {
 		$this->options->setByArray($_POST, 'googleplus_%s');
 		$this->options->saveOptions();
 	}

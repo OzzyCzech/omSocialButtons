@@ -47,7 +47,7 @@ class Options {
 		foreach ($this->options as $key => $oldvalue) {
 			$param = sprintf($name, $key);
 			$value = array_key_exists($param, $data) ? $data[$param] : null;
-			if ($settype && $value !== null) settype($value, gettype($oldvalue)); // use same type as before except null
+			if ($settype && $oldvalue !== null) settype($value, gettype($oldvalue)); // use same type as before except null
 			$this->options[$key] = $value;
 		}
 	}

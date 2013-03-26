@@ -9,7 +9,7 @@ interface IButton {
 	 *
 	 * @return null
 	 */
-	public function init();
+	public function initButton();
 
 	/**
 	 * @return bool
@@ -21,14 +21,14 @@ interface IButton {
 	 *
 	 * @return null
 	 */
-	public function getSettingsFormHtml();
+	public function getOptionsForm();
 
 	/**
 	 * Nastavi settings
 	 *
 	 * @return mixed
 	 */
-	public function updateSettingsForm();
+	public function setOptionsData();
 
 	/**
 	 * Return button HTML
@@ -36,4 +36,5 @@ interface IButton {
 	 * @return null
 	 */
 	public function getButtonHtml();
+
 }

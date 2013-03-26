@@ -20,17 +20,14 @@ if (!class_exists('WP')) {
 }
 
 require_once 'Options.php';
-require_once 'Button.php';
-require_once 'facebook/Facebook.php';
-require_once 'google/GooglePlus.php';
-require_once 'twitter/Twitter.php';
+require_once 'IButton.php';
 
 /**
  * Simple social buttons generator
  *
- * @method null init()
- * @method null updateSettingsForm()
- * @method null getSettingsFormHtml()
+ * @method null initButton()
+ * @method null setOptionsData()
+ * @method null getOptionsForm()
  * @method null getButtonHtml()
  *
  * @method \omSocialButtons\facebook\Facebook facebook();
@@ -64,17 +61,9 @@ class Buttons {
 	public $options;
 
 	public function __construct() {
-
-		$this->buttons['googleplus'] = new GooglePlus();
-		$this->buttons['twitter'] = new Twitter();
-		$this->buttons['facebook'] = new Facebook();
-
 		$this->options = new CommonOptions('omSocialButtons');
-
-		$this->init(); // init buttons
-
 		add_action('admin_menu', array($this, 'admin_menu'));
-		add_filter('the_content', array($this, 'the_content'));
+		add_filter('the_content', array($this, 'the_content'), 999);
 	}
 
 	/**
@@ -90,10 +79,10 @@ class Buttons {
 	public function settings_page() {
 		if (isset($_POST['submit'])) {
 
-			$this->updateSettingsForm(); // update settings
+			$this->updateOptionsData(); // update all button options
 
-			$this->options->add_button = $_POST['add_button'];
-			$this->options->insert_to = (array)$_POST['insert_to'];
+			// save common options
+			$this->options->setByArray($_POST);
 			$this->options->saveOptions();
 
 			echo '<div class="updated"><p><strong>' . __('SocialButtons setting save') . '</strong></p></div>';
@@ -101,7 +90,7 @@ class Buttons {
 
 		$action = 'options-general.php?page=' . plugin_basename(__FILE__);
 		$post_types = get_post_types(array('public' => true, 'show_ui' => true), 'objects');
-		require dirname(__FILE__) . '/settings.phtml';
+		require dirname(__FILE__) . '/settings.phtml'; // render settings
 	}
 
 
@@ -122,6 +111,8 @@ class Buttons {
 		if (!in_array(get_post_type(), (array)$this->options->insert_to)) return $content;
 
 		switch ($this->options->add_button) {
+			case 'both':
+				return $social . $content . $social;
 			case 'before':
 				return $social . $content;
 			case 'after':
@@ -139,7 +130,7 @@ class Buttons {
 	 * @return IButton|null
 	 */
 	public function __call($name, $args) {
-		if (array_keys($this->buttons, $name)) {
+		if (array_key_exists($name, $this->buttons)) {
 			return $this->buttons[$name]; // return button if exists
 		}
 
@@ -178,4 +169,12 @@ class CommonOptions extends Options {
 	protected $options = array('add_button' => 'after', 'insert_to' => array('page', 'post'));
 }
 
+require_once 'facebook/Facebook.php';
+require_once 'google/GooglePlus.php';
+require_once 'twitter/Twitter.php';
+
 $omSocialButtons = new Buttons();
+$omSocialButtons->buttons['facebook'] = new Facebook();
+$omSocialButtons->buttons['twitter'] = new Twitter();
+$omSocialButtons->buttons['googleplus'] = new GooglePlus();
+$omSocialButtons->initButton(); // init all buttons

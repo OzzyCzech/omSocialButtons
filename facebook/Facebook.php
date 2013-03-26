@@ -16,15 +16,15 @@ class Facebook implements IButton {
 		$this->options = new Options('omSocialButtons-Facebook');
 	}
 
-
 	/**
 	 * Return setting HTML
 	 *
 	 * @return mixed
 	 */
-	public function getSettingsFormHtml() {
-		include __DIR__ . '/header.phtml';
+	public function getOptionsForm() {
+		$this->wp_head();
 		include __DIR__ . '/settings.phtml';
+		$this->wp_footer();
 	}
 
 
@@ -33,7 +33,7 @@ class Facebook implements IButton {
 	 *
 	 * @return mixed
 	 */
-	public function updateSettingsForm() {
+	public function setOptionsData() {
 		$this->options->setByArray($_POST, 'facebook_%s');
 		$this->options->saveOptions();
 	}
@@ -50,7 +50,7 @@ class Facebook implements IButton {
 	 *
 	 * @return mixed
 	 */
-	public function init() {
+	public function initButton() {
 		if (!$this->isEnable()) return;
 		add_action('wp_footer', array($this, 'wp_footer'));
 		add_action('wp_head', array($this, 'wp_head'));

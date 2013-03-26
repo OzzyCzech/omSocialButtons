@@ -21,8 +21,8 @@ class Twitter implements IButton {
 	 *
 	 * @return null
 	 */
-	public function init() {
-		// nothing
+	public function initButton() {
+		// nothing to init
 	}
 
 	/**
@@ -37,7 +37,7 @@ class Twitter implements IButton {
 	 *
 	 * @return null
 	 */
-	public function getSettingsFormHtml() {
+	public function getOptionsForm() {
 		require_once __DIR__ . '/settings.phtml';
 	}
 
@@ -46,7 +46,7 @@ class Twitter implements IButton {
 	 *
 	 * @return mixed
 	 */
-	public function updateSettingsForm() {
+	public function setOptionsData() {
 		$this->options->setByArray($_POST, 'twitter_%s');
 		$this->options->saveOptions();
 	}
@@ -59,8 +59,6 @@ class Twitter implements IButton {
 	public function getButtonHtml() {
 		if ($this->isEnable()) require_once __DIR__ . '/button.phtml';
 	}
-
-
 }
 
 /**

@@ -20,7 +20,12 @@ class GooglePlus implements Button {
 	 * @return null
 	 */
 	public function init() {
+		if (!$this->isEnable()) return;
+		add_action('wp_head', array($this, 'wp_head'));
+	}
 
+	public function wp_head() {
+		require_once __DIR__ . '/header.phtml';
 	}
 
 	/**
@@ -36,6 +41,7 @@ class GooglePlus implements Button {
 	 * @return null
 	 */
 	public function getSettingsFormHtml() {
+		require_once __DIR__ . '/header.phtml';
 		require_once __DIR__ . '/settings.phtml';
 	}
 
@@ -58,7 +64,7 @@ class GooglePlus implements Button {
 	 * @return null
 	 */
 	public function getButtonHtml() {
-		// TODO: Implement getButtonHtml() method.
+		if ($this->isEnable()) require_once __DIR__ . '/button.phtml';
 	}
 }
 
@@ -79,7 +85,7 @@ class Options extends \omSocialButtons\Options {
 	protected $options = array(
 		'enable' => '1',
 		'width' => 300,
-		'size' => '',
+		'size' => 'medium',
 		'lang' => '',
 		'annotation' => '',
 	);

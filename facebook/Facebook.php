@@ -50,6 +50,7 @@ class Facebook implements Button {
 	 * @return mixed
 	 */
 	public function init() {
+		if (!$this->isEnable()) return;
 		add_action('wp_footer', array($this, 'wp_footer'));
 		add_action('wp_head', array($this, 'wp_head'));
 	}
@@ -95,7 +96,7 @@ class Options extends \omSocialButtons\Options {
 		'width' => 450,
 		'show_faces' => '',
 		'send' => '', // send button
-		'layout' => '', // standard, button_count, box_count
+		'layout' => 'button_count', // standard, button_count, box_count
 		'action' => '', // like or recommend
 		'colorscheme' => '', // light or dark
 		'font' => '', // font

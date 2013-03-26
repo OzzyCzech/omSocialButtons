@@ -59,6 +59,23 @@ class Twitter implements IButton {
 	public function getButtonHtml() {
 		if ($this->isEnable()) require_once __DIR__ . '/button.phtml';
 	}
+
+	public $lang = array(
+		"" => 'Select language',
+		"en" => 'English',
+		"de" => 'German - Deutsch',
+		"it" => 'Italian - Italiano',
+		"pt" => 'Portuguese - Portugu?s',
+		"ru" => 'Russian',
+		"nl" => 'Dutch - Nederlands',
+		"no" => 'Norwegian - Norsk',
+		"sv" => 'Swedish - Svenska',
+		"fi" => 'Finnish - Suomi',
+		"da" => 'Danish - Dansk',
+		"pl" => 'Polish - Polski',
+		"hu" => 'Hungarian - Magyar',
+		"cs" => 'Czech - Čeština'
+	);
 }
 
 /**
@@ -78,7 +95,7 @@ class Options extends \omSocialButtons\Options {
 		'enable' => true,
 		'via' => '',
 		'related' => '',
-		'lang' => '',
+		'lang' => 'en',
 		'text' => '',
 		'size' => '',
 		'count' => '',

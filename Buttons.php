@@ -3,6 +3,7 @@ namespace omSocialButtons;
 
 use omSocialButtons\facebook\Facebook;
 use omSocialButtons\google\GooglePlus;
+use omSocialButtons\kindle\Kindle;
 use omSocialButtons\twitter\Twitter;
 
 /**
@@ -38,23 +39,6 @@ require_once 'IButton.php';
  * @author Roman Ozana <ozana@omdesign.cz>
  */
 class Buttons {
-
-	public static $langs = array(
-		"" => 'Select language',
-		"en" => 'English',
-		"de" => 'German - Deutsch',
-		"it" => 'Italian - Italiano',
-		"pt" => 'Portuguese - Portugu?s',
-		"ru" => 'Russian',
-		"nl" => 'Dutch - Nederlands',
-		"no" => 'Norwegian - Norsk',
-		"sv" => 'Swedish - Svenska',
-		"fi" => 'Finnish - Suomi',
-		"da" => 'Danish - Dansk',
-		"pl" => 'Polish - Polski',
-		"hu" => 'Hungarian - Magyar',
-		"cs" => 'Czech - Čeština'
-	);
 
 	public $buttons = array();
 
@@ -102,14 +86,7 @@ class Buttons {
 	 * @return string
 	 */
 	public function the_content($content) {
-		ob_start();
-		$this->getButtonHtml();
-		$social = '<div class="social-buttons"><div class="wrapper">' .
-			apply_filters('omSocialButtonsContent', ob_get_contents()) .
-			'</div></div>';
-		ob_end_clean();
-
-		//return '<pre>' . htmlentities($social) . '</pre>';
+		if (!$content) return $content;
 
 		// Ensure the correct page type and place
 		if (
@@ -120,6 +97,16 @@ class Buttons {
 		) {
 			return $content;
 		}
+
+		// prepare buttons HTMl
+		ob_start();
+		$this->getButtonHtml();
+		$social = '<div class="social-buttons"><div class="wrapper">' .
+			apply_filters('omSocialButtonsContent', ob_get_contents()) .
+			'</div></div>';
+		ob_end_clean();
+
+		//return '<pre>' . htmlentities($social) . '</pre>';
 
 		switch ($this->options->add_button) {
 			case 'both':
@@ -192,9 +179,12 @@ class CommonOptions extends Options {
 require_once 'facebook/Facebook.php';
 require_once 'google/GooglePlus.php';
 require_once 'twitter/Twitter.php';
+require_once 'kindle/Kindle.php';
 
 $omSocialButtons = new Buttons();
 $omSocialButtons->buttons['facebook'] = new Facebook();
 $omSocialButtons->buttons['twitter'] = new Twitter();
 $omSocialButtons->buttons['googleplus'] = new GooglePlus();
+$omSocialButtons->buttons['kindle'] = new Kindle();
 $omSocialButtons->initButton(); // init all buttons
+

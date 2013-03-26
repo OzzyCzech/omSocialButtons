@@ -37,17 +37,17 @@
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><?php _e('Show faces', SB ) ?></th>
+		<th scope="row"><?php _e('Show faces', SB) ?></th>
 		<td>
 			<label for="facebook_show_faces">
 				<input name="facebook_show_faces" type="checkbox" id="facebook_show_faces"
 				       value="1" <?php checked(true, $this->options->show_faces); ?> />
-				<?php _e('show faces', SB ) ?></label>
+				<?php _e('show faces', SB) ?></label>
 		</td>
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><?php _e('Color scheme', SB ) ?></th>
+		<th scope="row"><?php _e('Color scheme', SB) ?></th>
 		<td>
 			<select name="facebook_colorscheme" id="facebook_colorscheme">
 				<option value="" <?php selected('', $this->options->colorscheme); ?>>Light</option>
@@ -93,9 +93,21 @@
 		</td>
 	</tr>
 
+
+	<tr valign="top">
+		<th scope="row"><?php _e('Lang', SB) ?></th>
+		<td>
+			<select name="facebook_lang" id="facebook_lang">
+				<?php foreach ($this->lang as $key => $name) { ?>
+					<option value="<?php echo $key ?>" <?php selected($key, $this->options->lang); ?>><?php echo $name ?></option>
+				<?php } ?>
+			</select>
+		</td>
+	</tr>
+
 	<tr>
 		<th><?php _e('Example', SB); ?></th>
-		<td><?php $this->head();  $this->footer(); $this->getButtonHtml();?></td>
+		<td><?php $this->getButtonHtml();?></td>
 	</tr>
 
 	<tr>

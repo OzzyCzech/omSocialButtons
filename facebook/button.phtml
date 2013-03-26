@@ -1,4 +1,19 @@
-<? /** @var \omSocialButtons\facebook\Facebook $this */?>
+<?php
+/** @var \omSocialButtons\facebook\Facebook $this */
+if ($this->root) {
+	?>
+	<!-- Facebook -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/<?php echo $this->options->lang?>/all.js#xfbml=1&appId=556615607691233";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- Facebook -->
+<?php } $this->root = false; ?>
+
 <div class="facebook">
 	<div class="fb-like"
 		<?php

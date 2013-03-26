@@ -37,11 +37,10 @@
 	<tr valign="top">
 		<th scope="row"><label for="twitter_lang"><?php _e('Lang', SB) ?></label></th>
 		<td>
-			<select id="twitter_lang" name="twitter_lang">
-				<?php
-				foreach (\omSocialButtons\Buttons::$langs as $lang => $title) {
-					echo '<option value="' . $lang . '" ' . selected(	$lang, $this->options->lang, false) . '>' . $title . '</option>' . PHP_EOL;
-				}?>
+			<select name="twitter_lang" id="twitter_lang">
+				<?php foreach ($this->lang as $key => $name) { ?>
+					<option value="<?php echo $key ?>" <?php selected($key, $this->options->lang); ?>><?php echo $name ?></option>
+				<?php } ?>
 			</select>
 		</td>
 	</tr>

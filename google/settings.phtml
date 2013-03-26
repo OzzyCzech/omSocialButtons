@@ -1,8 +1,4 @@
-<?php
-/**
- * @var $this \omSocialButtons\google\GooglePlus
- */
-?>
+<?php /** @var $this \omSocialButtons\google\GooglePlus */ ?>
 <table class="form-table">
 	<tr>
 		<td colspan="2"><h3>Google plus</h3></td>
@@ -57,13 +53,10 @@
 	<tr valign="top">
 		<th scope="row"><label for="googleplus_lang"><?php _e('Lang', SB) ?></label></th>
 		<td>
-			<select id="googleplus_lang" name="googleplus_lang">
-				<?php
-				foreach (\omSocialButtons\Buttons::$langs as $lang => $title) {
-					echo '<option value="' . $lang . '" ' . selected(
-						$this->options->lang, $lang, false
-					) . '>' . $title . '</option>';
-				}?>
+			<select name="googleplus_lang" id="googleplus_lang">
+				<?php foreach ($this->lang as $key => $name) { ?>
+					<option value="<?php echo $key ?>" <?php selected($key, $this->options->lang); ?>><?php echo $name ?></option>
+				<?php } ?>
 			</select>
 		</td>
 	</tr>

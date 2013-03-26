@@ -1,13 +1,68 @@
-<? /** @var \omSocialButtons\twitter\Twitter $this */ ?>
+<? /** @var \omSocialButtons\kindle\Kindle $this */?>
 <table class="form-table">
 	<tr>
-		<td colspan="2"><h3>Twitter</h3></td>
+		<td colspan="2"><h3>Kindle</h3></td>
+	</tr>
+
+	<tr valign="top">
+		<th scope="row"><?php _e('Enable', SB) ?></th>
+		<td>
+			<label for="kindle_enable">
+				<input name="kindle_enable" type="checkbox" id=kindle_enable"
+				value="1" <?php checked(true, $this->isEnable()); ?> />
+				<?php _e('enable button', SB) ?></label>
+		</td>
 	</tr>
 
 	<tr>
+		<th><?php _e('Selectors', SB)?></th>
+		<td>
+			<table>
+				<tr>
+					<td><label for="kindle_selectors_title"><?php _e('Title', SB)?></label></td>
+					<td><input type="text" name="kindle_selectors[title]" id="kindle_selectors_title"
+					           value="<?php echo $this->options->selectors['title'] ?>"/></td>
+				</tr>
+				<tr>
+					<td><label for="kindle_selectors_title"><?php _e('Published', SB)?></label></td>
+					<td><input type="text" name="kindle_selectors[published]" id="kindle_selectors_published"
+					           value="<?php echo $this->options->selectors['published'] ?>"/></td>
+				</tr>
+				<tr>
+					<td><label for="kindle_selectors_title"><?php _e('Content', SB)?></label></td>
+					<td><input type="text" name="kindle_selectors[content]" id="kindle_selectors_content"
+					           value="<?php echo $this->options->selectors['content'] ?>"/></td>
+				</tr>
+				<tr>
+					<td><label for="kindle_selectors_title"><?php _e('Exclude', SB)?></label></td>
+					<td><input type="text" name="kindle_selectors[exclude]" id="kindle_selectors_exclude"
+					           value="<?php echo $this->options->selectors['exclude'] ?>"/></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr>
+		<th><?php _e('Auto embed', SB)?></th>
+		<td>
+			<label for="kindle_embed_js">
+				<input type="checkbox" value="1" <?php checked(true, $this->options->embed_js); ?> name="kindle_embed_js"
+				       id="kindle_embed_js"/>
+				<?php _e('embed javascript automatically', SB)?>
+			</label><br>
+
+			<label for="kindle_embed_css">
+				<input type="checkbox" value="1" <?php checked(true, $this->options->embed_css); ?> name="kindle_embed_css"
+				       id="kindle_embed_css"/>
+				<?php _e('embed css automatically', SB)?>
+			</label>
+		</td>
+	</tr>
+	<tr>
 		<th><?php _e('More info about', SB) ?></th>
-		<td><a href="https://dev.twitter.com/docs/tweet-button" target="_blank" class="button-secondary">Tweet
+		<td><a href="http://www.amazon.com/gp/sendtokindle/developers/button" target="_blank" class="button-secondary">Kindle
 				button</a>
 		</td>
 	</tr>
+
 </table>

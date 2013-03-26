@@ -28,7 +28,7 @@ if (!current_user_can('manage_options'))
 						<option value="manually" <?php selected('manually', $this->options->add_button); ?>>manually</option>
 						<option value="before" <?php selected('before', $this->options->add_button); ?>>before</option>
 						<option value="after" <?php selected('after', $this->options->add_button); ?>>after</option>
-						<option value="both" <?php selected('both', $this->options->add_button); ?>>both (after & before)</option>
+						<option value="both" <?php selected('both', $this->options->add_button); ?>>after & before</option>
 					</select>
 					<label for="add_button"><?php _e('content', SB)?></label>
 				</td>
@@ -42,6 +42,7 @@ if (!current_user_can('manage_options'))
 						<pre>echo $omSocialButtons->facebook()->getButtonHtml();</pre>
 						<pre>echo $omSocialButtons->googleplus()->getButtonHtml();</pre>
 						<pre>echo $omSocialButtons->twitter()->getButtonHtml();</pre>
+						<pre>echo $omSocialButtons->kindle()->getButtonHtml();</pre>
 						<p>or</p>
 						<pre>echo $omSocialButtons->getButtonHtml();</pre>
 					</td>
@@ -66,7 +67,7 @@ if (!current_user_can('manage_options'))
 			</tr>
 
 			<tr>
-				<th scope="row"><? _e('Show on', SB)?></th>
+				<th scope="row"><? _e('Show buttons on', SB)?></th>
 				<td>
 					<label for="on_single">
 						<input name="on_single" type="checkbox" id="on_single" value="1" <?php checked(

@@ -1,8 +1,5 @@
 <?php
 /** @var \omSocialButtons\Buttons $this */
-
-echo $this->facebook()->getButtonHtml();
-
 if (!current_user_can('manage_options'))
 	wp_die(__('You do not have sufficient permissions to manage options for this site.'));
 ?>

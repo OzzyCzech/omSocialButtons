@@ -17,16 +17,24 @@ class Facebook implements IButton {
 	}
 
 	/**
+	 * Register all hooks
+	 *
+	 * @return mixed
+	 */
+	public function initButton() {
+		if (!$this->isEnable()) return;
+		add_action('wp_footer', array($this, 'footer'));
+		add_action('wp_head', array($this, 'head'));
+	}
+
+	/**
 	 * Return setting HTML
 	 *
 	 * @return mixed
 	 */
 	public function getOptionsForm() {
-		$this->wp_head();
 		include __DIR__ . '/settings.phtml';
-		$this->wp_footer();
 	}
-
 
 	/**
 	 * Nastavi settings
@@ -45,17 +53,6 @@ class Facebook implements IButton {
 		return (bool)$this->options->enable;
 	}
 
-	/**
-	 * Register all hooks
-	 *
-	 * @return mixed
-	 */
-	public function initButton() {
-		if (!$this->isEnable()) return;
-		add_action('wp_footer', array($this, 'wp_footer'));
-		add_action('wp_head', array($this, 'wp_head'));
-	}
-
 
 	/**
 	 * Return button HTML
@@ -66,12 +63,12 @@ class Facebook implements IButton {
 		if ($this->isEnable()) require_once __DIR__ . '/button.phtml';
 	}
 
-	public function wp_footer() {
-		echo '<!-- Facebook --><div id="fb-root"></div><!-- Facebook -->';
+	public function head() {
+		require_once __DIR__ . '/header.phtml';
 	}
 
-	public function wp_head() {
-		require_once __DIR__ . '/header.phtml';
+	public function footer() {
+		echo '<!-- Facebook --><div id="fb-root"></div><!-- Facebook -->';
 	}
 
 }

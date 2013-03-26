@@ -21,10 +21,10 @@ class GooglePlus implements IButton {
 	 */
 	public function initButton() {
 		if (!$this->isEnable()) return;
-		add_action('wp_head', array($this, 'wp_head'));
+		add_action('wp_head', array($this, 'head'));
 	}
 
-	public function wp_head() {
+	public function head() {
 		require_once __DIR__ . '/header.phtml';
 	}
 

@@ -79,7 +79,7 @@ class Buttons {
 	public function settings_page() {
 		if (isset($_POST['submit'])) {
 
-			$this->updateOptionsData(); // update all button options
+			$this->setOptionsData(); // update all button options
 
 			// save common options
 			$this->options->setByArray($_POST);
@@ -108,7 +108,10 @@ class Buttons {
 
 		//return '<pre>' . htmlentities($social) . '</pre>';
 
-		if (!in_array(get_post_type(), (array)$this->options->insert_to)) return $content;
+		if (
+			!in_array(get_post_type(), (array)$this->options->insert_to) ||
+			!is_single()
+		) return $content;
 
 		switch ($this->options->add_button) {
 			case 'both':

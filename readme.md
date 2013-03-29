@@ -18,6 +18,11 @@ CSS example
 	margin: 0;
 	padding: 5px 0;
 	text-align: right;
+	clear: all;
+}
+
+.social-buttons .wrapper .facebook:before {
+	content: "Sdílejte: ";
 }
 
 .social-buttons .wrapper .twitter-share-button {
@@ -25,7 +30,7 @@ CSS example
 }
 
 .social-buttons .wrapper *[id^=___plusone] {
-	width: 65px !important;
+	width: 60px !important;
 }
 
 .social-buttons .wrapper iframe {
@@ -33,12 +38,32 @@ CSS example
 	padding: 0;
 }
 
+.social-buttons .wrapper .fb-like iframe {
+	max-width: inherit !important;
+	width: 450px !important;
+}
+
 .social-buttons .wrapper>div {
 	display: inline-block;
-	margin-right: 10px;
-	height: 20px;
+	z-index: 1;
+	margin-left: 5px;
+	height: 21px;
 	line-height: 0;
 	vertical-align: middle;
+}
+
+.post-social-buttons a:hover {
+	opacity: 1;
+	box-shadow: none;
+}
+```
+
+If you want hidde popup window:
+
+```
+.fb-like {
+	height: 20px;
+	overflow: hidden;
 }
 ```
 

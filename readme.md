@@ -18,7 +18,7 @@ CSS example
 	margin: 0;
 	padding: 5px 0;
 	text-align: right;
-	clear: all;
+	clear: both;
 }
 
 .social-buttons .wrapper .facebook:before {

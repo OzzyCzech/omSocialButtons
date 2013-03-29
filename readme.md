@@ -58,7 +58,7 @@ CSS example
 }
 ```
 
-If you want hidde popup window:
+If you want hide popup window:
 
 ```
 .fb-like {

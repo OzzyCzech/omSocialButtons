@@ -38,14 +38,13 @@ CSS example
 	padding: 0;
 }
 
-.social-buttons .wrapper .fb-like iframe {
+.social-buttons .wrapper .fb-like:hover iframe {
 	max-width: inherit !important;
 	width: 450px !important;
 }
 
 .social-buttons .wrapper>div {
 	display: inline-block;
-	z-index: 1;
 	margin-left: 5px;
 	height: 21px;
 	line-height: 0;

@@ -67,6 +67,11 @@ If you want hide popup window:
 }
 ```
 
+Todo
+----
+http://business.pinterest.com/widget-builder/#do_pin_it_button - Pinterest button
+http://developer.linkedin.com/publishers - linked in button
+
 Release notes
 -------------
 

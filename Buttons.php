@@ -21,8 +21,8 @@ if (!class_exists('WP')) {
 }
 define('SB', 'omSocialButtons');
 
-require_once 'Options.php';
-require_once 'IButton.php';
+require_once __DIR__ . '/Options.php';
+require_once __DIR__ . '/IButton.php';
 
 /**
  * Simple social buttons generator

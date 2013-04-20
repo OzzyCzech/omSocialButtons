@@ -90,7 +90,7 @@ class Twitter implements IButton {
  *
  * @author Roman Ožana <ozana@omdesign.cz>
  */
-class Options extends \omSocialButtons\Options {
+class Options extends \om\Options {
 	protected $options = array(
 		'enable' => true,
 		'via' => '',

@@ -1,6 +1,7 @@
 <?php
 namespace omSocialButtons;
 
+use om\Options;
 use omSocialButtons\facebook\Facebook;
 use omSocialButtons\google\GooglePlus;
 use omSocialButtons\kindle\Kindle;
@@ -21,8 +22,7 @@ if (!class_exists('WP')) {
 }
 define('SB', 'omSocialButtons');
 
-require_once __DIR__ . '/Options.php';
-require_once __DIR__ . '/IButton.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 /**
  * Simple social buttons generator
@@ -75,7 +75,7 @@ class Buttons {
 
 		$action = 'options-general.php?page=' . plugin_basename(__FILE__);
 		$post_types = get_post_types(array('public' => true, 'show_ui' => true), 'objects');
-		require dirname(__FILE__) . '/settings.phtml'; // render settings
+		require __DIR__ . '/buttons/settings.phtml'; // render settings
 	}
 
 
@@ -175,11 +175,6 @@ class CommonOptions extends Options {
 		'on_archive' => false,
 	);
 }
-
-require_once 'facebook/Facebook.php';
-require_once 'google/GooglePlus.php';
-require_once 'twitter/Twitter.php';
-require_once 'kindle/Kindle.php';
 
 $omSocialButtons = new Buttons();
 $omSocialButtons->buttons['facebook'] = new Facebook();

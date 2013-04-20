@@ -1,0 +1,11 @@
+{
+	"require": {
+		"om/wplugins": "v0.0.4"
+	},
+
+	"autoload": {
+		"classmap": [
+			"buttons"
+		]
+	}
+}

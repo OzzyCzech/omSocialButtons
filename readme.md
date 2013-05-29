@@ -11,22 +11,22 @@ Use [BOWER](http://twitter.github.com/bower/) from Twitter
 
 Callback actions
 ----------------
-There are some action callbacks
+There are some action callbacks, they are call before or after method call
 
 ```
-before_[key]_initButton
-after_[key]_initButton
-before_[key]_getButtonHtml
-after_[key]_getButtonHtml
+before_[key]_initButton -
+after_[key]_initButton -
+
+before_[key]_getButtonHtml - call before getting selected button html
+after_[key]_getButtonHtml - call after getting selected button html
 ```
 
-Keys: facebook, twitter, googleplus, kindle, flatter
+Keys: ```facebook```, ```twitter```, ```googleplus```, ```kindle```, ```flatter```
 
 You can also apply filter fot buttons content: ```omSocialButtonsContent```
 
 CSS example
 -----------
-
 
 ```
 .social-buttons .wrapper {
@@ -88,6 +88,9 @@ http://developer.linkedin.com/publishers - linked in button
 
 Release notes
 -------------
+
+2.1
+- add flatter button
 
 2.0
 - new interface for buttons work well with new Wordpress

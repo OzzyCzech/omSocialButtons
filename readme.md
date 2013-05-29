@@ -9,6 +9,28 @@ Use [BOWER](http://twitter.github.com/bower/) from Twitter
     cd wp-content/plugins
     bower install git@bitbucket.org:OzzyCzech/omsocialbuttons.git
 
+Callback actions
+----------------
+There are some action callbacks
+
+```
+before_[key]_initButton
+after_[key]_initButton
+before_[key]_getButtonHtml
+after_[key]_getButtonHtml
+```
+
+Keys: facebook, twitter, googleplus, kindle, flatter
+
+There is also one filter for content
+
+```
+omSocialButtonsContent
+```
+
+
+
+
 CSS example
 -----------
 

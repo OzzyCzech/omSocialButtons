@@ -35,6 +35,7 @@ require_once __DIR__ . '/vendor/autoload.php';
  * @method \omSocialButtons\facebook\Facebook facebook();
  * @method \omSocialButtons\twitter\Twitter twitter();
  * @method \omSocialButtons\google\GooglePlus googleplus();
+ * @method \omSocialButtons\flatter\Flatter flatter();
  *
  * @author Roman Ozana <ozana@omdesign.cz>
  */
@@ -135,7 +136,9 @@ class Buttons {
 		$results = array();
 		foreach ($this->buttons as $key => $button) {
 			/** @var IButton $button */
+			do_action($x = sprintf('before_%s_%s', $key, $name), $args);
 			$results[$key] = call_user_func_array(array($button, $name), $args); // call selected function on all buttons
+			do_action(sprintf('after_%s_%s', $key, $name), $args);
 		}
 		return $results;
 	}

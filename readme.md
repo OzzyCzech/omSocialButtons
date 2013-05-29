@@ -22,14 +22,7 @@ after_[key]_getButtonHtml
 
 Keys: facebook, twitter, googleplus, kindle, flatter
 
-There is also one filter for content
-
-```
-omSocialButtonsContent
-```
-
-
-
+You can also apply filter fot buttons content: ```omSocialButtonsContent```
 
 CSS example
 -----------

@@ -77,7 +77,7 @@ class Buttons {
 			$this->options->setByArray($_POST);
 			$this->options->saveOptions();
 
-			echo '<div class="updated"><p><strong>' . __('SocialButtons setting save', SB) . '</strong></p></div>';
+			echo '<div class="updated"><p><strong>' . __('SocialButtons setting was saved', SB) . '</strong></p></div>';
 		}
 
 		$action = 'options-general.php?page=' . plugin_basename(__FILE__);

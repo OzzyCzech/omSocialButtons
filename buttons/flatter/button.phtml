@@ -1,4 +1,6 @@
 <?php
 /** @var \omSocialButtons\flatter\Flatter $this */
 ?>
-<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://www.zdrojak.cz/"></a>
+<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" <?
+Html::attr('href', apply_filters('share_url', get_permalink()));
+?>></a>

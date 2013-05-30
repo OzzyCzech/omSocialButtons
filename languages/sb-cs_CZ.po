@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: omRealEstate\n"
-"POT-Creation-Date: 2013-05-30 13:35+0100\n"
-"PO-Revision-Date: 2013-05-30 13:35+0100\n"
+"POT-Creation-Date: 2013-05-30 13:38+0100\n"
+"PO-Revision-Date: 2013-05-30 13:43+0100\n"
 "Last-Translator: Roman Ožana <ozana@omdesign.cz>\n"
 "Language-Team:  <ozana@omdesign.cz>\n"
 "Language: cs_CZ\n"
@@ -17,8 +17,8 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../Buttons.php:80
-msgid "SocialButtons setting save"
-msgstr "Nastavení sociálních tlačítek uloženo"
+msgid "SocialButtons setting was saved"
+msgstr "Nastavení sociálních tlačítek bylo uloženo"
 
 #: ../buttons/settings.phtml:4
 msgid "You do not have sufficient permissions to manage options for this site."
@@ -135,7 +135,7 @@ msgstr "Příklad"
 #: ../buttons/flatter/settings.phtml:104 ../buttons/google/settings.phtml:70
 #: ../buttons/kindle/settings.phtml:62 ../buttons/twitter/settings.phtml:97
 msgid "More info about"
-msgstr "Více informací o"
+msgstr "Více informací"
 
 #: ../buttons/google/settings.phtml:19 ../buttons/twitter/settings.phtml:58
 msgid "Size"

@@ -3,6 +3,7 @@ namespace omSocialButtons;
 
 use om\Options;
 use omSocialButtons\facebook\Facebook;
+use omSocialButtons\flatter\Flatter;
 use omSocialButtons\google\GooglePlus;
 use omSocialButtons\kindle\Kindle;
 use omSocialButtons\twitter\Twitter;
@@ -20,7 +21,7 @@ if (!class_exists('WP')) {
 	header('HTTP/1.1 403 Forbidden');
 	exit;
 }
-define('SB', 'omSocialButtons');
+define('SB', 'sb');
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -50,6 +51,11 @@ class Buttons {
 		$this->options = new CommonOptions('omSocialButtons');
 		add_action('admin_menu', array($this, 'admin_menu'));
 		add_filter('the_content', array($this, 'the_content'), 999);
+		add_action('init', array($this, 'init'));
+	}
+
+	public function init() {
+		load_plugin_textdomain(SB, false, basename(__DIR__) . '/languages/');
 	}
 
 	/**
@@ -184,5 +190,6 @@ $omSocialButtons->buttons['facebook'] = new Facebook();
 $omSocialButtons->buttons['twitter'] = new Twitter();
 $omSocialButtons->buttons['googleplus'] = new GooglePlus();
 $omSocialButtons->buttons['kindle'] = new Kindle();
+$omSocialButtons->buttons['flatter'] = new Flatter();
 $omSocialButtons->initButton(); // init all buttons
 

@@ -9,17 +9,23 @@ if (!current_user_can('manage_options'))
 		border-bottom: 1px solid #ddd;
 		padding-bottom: .2em;
 	}
+
+	pre {
+		border: 1px solid #ddd;
+		padding: 3px 8px;
+		background: #eee;
+	}
 </style>
 
 <div class="wrap">
 	<?php screen_icon(); ?>
-	<h2><?php _e('Social Buttons Settings', SB)?></h2>
+	<h2><?php _e('Social Buttons Settings', SB) ?></h2>
 
 	<form action="<?php echo $action ?>" method="post">
 
 		<table class="form-table">
 			<tr>
-				<td colspan="2"><h3>Common</h3></td>
+				<td colspan="2"><h3><? _e('Common', SB) ?></h3></td>
 			</tr>
 			<tr oninvalid="top">
 				<th scope="row"><?php _e('Add buttons', SB) ?></th>
@@ -30,20 +36,20 @@ if (!current_user_can('manage_options'))
 						<option value="after" <?php selected('after', $this->options->add_button); ?>>after</option>
 						<option value="both" <?php selected('both', $this->options->add_button); ?>>after & before</option>
 					</select>
-					<label for="add_button"><?php _e('content', SB)?></label>
+					<label for="add_button"><?php _e('content', SB) ?></label>
 				</td>
 			</tr>
 
 			<?php if ($this->options->add_button === 'manually') { ?>
 				<tr>
-					<th><?php _e('Manualy', SB)?></th>
+					<th><?php _e('Manualy', SB) ?></th>
 					<td>
-						<p><?php _e('Add somewhere to you single post template php file', SB)?> </p>
-						<pre>echo $omSocialButtons->facebook()->getButtonHtml();</pre>
-						<pre>echo $omSocialButtons->googleplus()->getButtonHtml();</pre>
-						<pre>echo $omSocialButtons->twitter()->getButtonHtml();</pre>
-						<pre>echo $omSocialButtons->kindle()->getButtonHtml();</pre>
-						<p>or</p>
+						<p><?php _e('Add somewhere to you single post template php file', SB) ?></p>
+
+						<pre><? foreach ($this->buttons as $name => $button) {
+								echo sprintf('echo $omSocialButtons->%s()->getButtonHtml();' . PHP_EOL, $name);
+							} ?></pre>
+						<p><? _e('or', SB) ?></p>
 						<pre>echo $omSocialButtons->getButtonHtml();</pre>
 					</td>
 				</tr>
@@ -67,7 +73,7 @@ if (!current_user_can('manage_options'))
 			</tr>
 
 			<tr>
-				<th scope="row"><? _e('Show buttons on', SB)?></th>
+				<th scope="row"><? _e('Show buttons on', SB) ?></th>
 				<td>
 					<label for="on_single">
 						<input name="on_single" type="checkbox" id="on_single" value="1" <?php checked(

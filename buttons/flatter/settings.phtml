@@ -1,15 +1,15 @@
 <? /** @var \omSocialButtons\facebook\Facebook $this */ ?>
 <table class="form-table">
 	<tr>
-		<td colspan="2"><h3>Facebook</h3></td>
+		<td colspan="2"><h3>Flatter</h3></td>
 	</tr>
 
 
 	<tr valign="top">
 		<th scope="row"><?php _e('Enable', SB) ?></th>
 		<td>
-			<label for="facebook_enable">
-				<input name="facebook_enable" type="checkbox" id="facebook_enable"
+			<label for="flatter_enable">
+				<input name="flatter_enable" type="checkbox" id="flatter_enable"
 				       value="1" <?php checked(true, $this->options->enable); ?> />
 				<?php _e('enable button', SB) ?></label>
 		</td>
@@ -18,10 +18,10 @@
 	<tr valign="top">
 		<th scope="row"><?php _e('Width', SB) ?></th>
 		<td>
-			<input name="facebook_width" type="text" id="facebook_width"
+			<input name="flatter_width" type="text" id="flatter_width"
 			       value="<?php echo esc_attr($this->options->width); ?>"
 			       class="regular-text"/>
-			<label for="facebook_width">px</label>
+			<label for="flatter_width">px</label>
 
 		</td>
 	</tr>
@@ -29,8 +29,8 @@
 	<tr valign="top">
 		<th scope="row"><?php _e('Send button', SB) ?></th>
 		<td>
-			<label for="facebook_send">
-				<input name="facebook_send" type="checkbox" id="facebook_send"
+			<label for="flatter_send">
+				<input name="flatter_send" type="checkbox" id="flatter_send"
 				       value="1" <?php checked(true, $this->options->send); ?> />
 				<?php _e('send button', SB) ?></label>
 		</td>
@@ -39,8 +39,8 @@
 	<tr valign="top">
 		<th scope="row"><?php _e('Show faces', SB) ?></th>
 		<td>
-			<label for="facebook_show_faces">
-				<input name="facebook_show_faces" type="checkbox" id="facebook_show_faces"
+			<label for="flatter_show_faces">
+				<input name="flatter_show_faces" type="checkbox" id="flatter_show_faces"
 				       value="1" <?php checked(true, $this->options->show_faces); ?> />
 				<?php _e('show faces', SB) ?></label>
 		</td>
@@ -49,7 +49,7 @@
 	<tr valign="top">
 		<th scope="row"><?php _e('Color scheme', SB) ?></th>
 		<td>
-			<select name="facebook_colorscheme" id="facebook_colorscheme">
+			<select name="flatter_colorscheme" id="flatter_colorscheme">
 				<option value="" <?php selected('', $this->options->colorscheme); ?>>Light</option>
 				<option value="dark" <?php selected('dark', $this->options->colorscheme); ?>>Dark</option>
 			</select>
@@ -59,7 +59,7 @@
 	<tr valign="top">
 		<th scope="row"><?php _e('Layout', SB) ?></th>
 		<td>
-			<select name="facebook_layout" id="facebook_layout">
+			<select name="flatter_layout" id="flatter_layout">
 				<option value="" <?php selected('', $this->options->layout); ?>>standard</option>
 				<option value="button_count" <?php selected('button_count', $this->options->layout); ?>>button_count</option>
 				<option value="box_count" <?php selected('box_count', $this->options->layout); ?>>box_count</option>
@@ -70,7 +70,7 @@
 	<tr valign="top">
 		<th scope="row"><?php _e('Font', SB) ?></th>
 		<td>
-			<select name="facebook_font" id="facebook_font">
+			<select name="flatter_font" id="flatter_font">
 				<option value="" <?php selected('', $this->options->font); ?>></option>
 				<option value="arial" <?php selected('arial', $this->options->font); ?>>arial</option>
 				<option value="lucida grande" <?php selected('lucida grande', $this->options->font); ?>>lucida grande</option>
@@ -86,7 +86,7 @@
 	<tr valign="top">
 		<th scope="row"><?php _e('Action', SB) ?></th>
 		<td>
-			<select name="facebook_action" id="facebook_action">
+			<select name="flatter_action" id="flatter_action">
 				<option value="" <?php selected($this->options->action, ''); ?>>like</option>
 				<option value="recommend" <?php selected($this->options->action, 'recommend'); ?>>recommend</option>
 			</select>
@@ -94,16 +94,6 @@
 	</tr>
 
 
-	<tr valign="top">
-		<th scope="row"><?php _e('Lang', SB) ?></th>
-		<td>
-			<select name="facebook_lang" id="facebook_lang">
-				<?php foreach ($this->lang as $key => $name) { ?>
-					<option value="<?php echo $key ?>" <?php selected($key, $this->options->lang); ?>><?php echo $name ?></option>
-				<?php } ?>
-			</select>
-		</td>
-	</tr>
 
 	<tr>
 		<th><?php _e('Example', SB); ?></th>

@@ -1,0 +1,305 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: omRealEstate\n"
+"POT-Creation-Date: 2013-05-30 13:35+0100\n"
+"PO-Revision-Date: 2013-05-30 13:35+0100\n"
+"Last-Translator: Roman Ožana <ozana@omdesign.cz>\n"
+"Language-Team:  <ozana@omdesign.cz>\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../Buttons.php:80
+msgid "SocialButtons setting save"
+msgstr "Nastavení sociálních tlačítek uloženo"
+
+#: ../buttons/settings.phtml:4
+msgid "You do not have sufficient permissions to manage options for this site."
+msgstr "Nemáte dostatečná oprávnění pro správu nastavení této stránky."
+
+#: ../buttons/settings.phtml:22
+msgid "Social Buttons Settings"
+msgstr "Nastavení sociálních tlačítek"
+
+#: ../buttons/settings.phtml:28
+msgid "Common"
+msgstr "Společné"
+
+#: ../buttons/settings.phtml:31
+msgid "Add buttons"
+msgstr "Přidat tlačítka"
+
+#: ../buttons/settings.phtml:39
+msgid "content"
+msgstr "obsah"
+
+#: ../buttons/settings.phtml:45
+msgid "Manualy"
+msgstr "Ručně"
+
+#: ../buttons/settings.phtml:47
+msgid "Add somewhere to you single post template php file"
+msgstr "Přidat někde do vaší single post šablony"
+
+#: ../buttons/settings.phtml:52
+msgid "or"
+msgstr "nebo"
+
+#: ../buttons/settings.phtml:59
+msgid "Add to"
+msgstr "Přidat do"
+
+#: ../buttons/settings.phtml:76
+msgid "Show buttons on"
+msgstr "Zobrazit tlačítka na"
+
+#: ../buttons/settings.phtml:82
+msgid "single page or post"
+msgstr "samostatná stránka nebo příspěvek"
+
+#: ../buttons/settings.phtml:89
+msgid "archive page"
+msgstr "stránka archivu"
+
+#: ../buttons/settings.phtml:96
+msgid "home page"
+msgstr "domovská stránka"
+
+#: ../buttons/facebook/settings.phtml:9 ../buttons/flatter/settings.phtml:9
+#: ../buttons/google/settings.phtml:9 ../buttons/kindle/settings.phtml:8
+#: ../buttons/twitter/settings.phtml:8
+msgid "Enable"
+msgstr "Povolit"
+
+#: ../buttons/facebook/settings.phtml:14 ../buttons/flatter/settings.phtml:14
+#: ../buttons/google/settings.phtml:14 ../buttons/kindle/settings.phtml:13
+#: ../buttons/twitter/settings.phtml:13
+msgid "enable button"
+msgstr "povolit tlačítko"
+
+#: ../buttons/facebook/settings.phtml:19 ../buttons/flatter/settings.phtml:19
+#: ../buttons/google/settings.phtml:43
+msgid "Width"
+msgstr "Šířka"
+
+#: ../buttons/facebook/settings.phtml:30 ../buttons/flatter/settings.phtml:30
+msgid "Send button"
+msgstr "Tlačítko odeslat"
+
+#: ../buttons/facebook/settings.phtml:35 ../buttons/flatter/settings.phtml:35
+msgid "send button"
+msgstr "tlačítko odeslat"
+
+#: ../buttons/facebook/settings.phtml:40 ../buttons/flatter/settings.phtml:40
+msgid "Show faces"
+msgstr "Zobrazit avatary"
+
+#: ../buttons/facebook/settings.phtml:45 ../buttons/flatter/settings.phtml:45
+msgid "show faces"
+msgstr "zobrazit avatary"
+
+#: ../buttons/facebook/settings.phtml:50 ../buttons/flatter/settings.phtml:50
+msgid "Color scheme"
+msgstr "Barevné schéma"
+
+#: ../buttons/facebook/settings.phtml:60 ../buttons/flatter/settings.phtml:60
+msgid "Layout"
+msgstr "Layout"
+
+#: ../buttons/facebook/settings.phtml:71 ../buttons/flatter/settings.phtml:71
+msgid "Font"
+msgstr "Font"
+
+#: ../buttons/facebook/settings.phtml:87 ../buttons/flatter/settings.phtml:87
+msgid "Action"
+msgstr "Akce"
+
+#: ../buttons/facebook/settings.phtml:98 ../buttons/google/settings.phtml:54
+#: ../buttons/twitter/settings.phtml:38
+msgid "Lang"
+msgstr "Jazyk"
+
+#: ../buttons/facebook/settings.phtml:109 ../buttons/flatter/settings.phtml:99
+#: ../buttons/google/settings.phtml:65 ../buttons/twitter/settings.phtml:92
+msgid "Example"
+msgstr "Příklad"
+
+#: ../buttons/facebook/settings.phtml:114
+#: ../buttons/flatter/settings.phtml:104 ../buttons/google/settings.phtml:70
+#: ../buttons/kindle/settings.phtml:62 ../buttons/twitter/settings.phtml:97
+msgid "More info about"
+msgstr "Více informací o"
+
+#: ../buttons/google/settings.phtml:19 ../buttons/twitter/settings.phtml:58
+msgid "Size"
+msgstr "Velikost"
+
+#: ../buttons/google/settings.phtml:31
+msgid "Annotation"
+msgstr "Upozornění"
+
+#: ../buttons/kindle/settings.phtml:18
+msgid "Selectors"
+msgstr "Selektory"
+
+#: ../buttons/kindle/settings.phtml:22
+msgid "Title"
+msgstr "Titulek"
+
+#: ../buttons/kindle/settings.phtml:27
+msgid "Published"
+msgstr "Publikováno"
+
+#: ../buttons/kindle/settings.phtml:32
+msgid "Content"
+msgstr "Obsah"
+
+#: ../buttons/kindle/settings.phtml:37
+msgid "Exclude"
+msgstr "Přeskočit"
+
+#: ../buttons/kindle/settings.phtml:46
+msgid "Auto embed"
+msgstr "Auto embed"
+
+#: ../buttons/kindle/settings.phtml:51
+msgid "embed javascript automatically"
+msgstr "embedovat javascript automaticky"
+
+#: ../buttons/kindle/settings.phtml:57
+msgid "embed css automatically"
+msgstr "vložit css automaticky"
+
+#: ../buttons/twitter/settings.phtml:18
+msgid "Twitter via"
+msgstr "Twitter via"
+
+#: ../buttons/twitter/settings.phtml:28
+msgid "Related account"
+msgstr "Provázaný účet"
+
+#: ../buttons/twitter/settings.phtml:49
+msgid "Twitter text"
+msgstr "Twitter text"
+
+#: ../buttons/twitter/settings.phtml:69
+msgid "Count"
+msgstr "Počet"
+
+#: ../buttons/twitter/settings.phtml:83
+msgid "Twitter hashtags"
+msgstr "Twitter hashtagy"
+
+#~ msgid "Not multisite ready :("
+#~ msgstr "Není připraveno na multisite :("
+
+#~ msgid "Social provider login error"
+#~ msgstr "Chyba přihlášení přes poskytovatele"
+
+#~ msgid "Ups! Missing data about response."
+#~ msgstr "Ups! Chybějící údaje o odpověď."
+
+#~ msgid "Invalid auth response "
+#~ msgstr "Chybná odpověď autentifikace "
+
+#~ msgid "An unknown error occurred, please try again later."
+#~ msgstr "Došlo k neznámé chybě, zkuste to prosím později."
+
+#~ msgid "Empty or corrupted response from selected provider."
+#~ msgstr "Vrátila se prázdná nebo poškozená odpověd od poskytovatele."
+
+#~ msgid "Social login options save"
+#~ msgstr "Social login nastavení bylo uloženo"
+
+#~ msgid ""
+#~ "Cannot log you in. There is no account on this site connected to that %s "
+#~ "user identity."
+#~ msgstr ""
+#~ "Přihlášení se nezdařilo. Na této stránce neexistuje žádný účet připojeno s"
+#~ "% s identitou uživatele."
+
+#~ msgid ""
+#~ "Account with email <strong>%s</strong> already exists, please try login "
+#~ "again."
+#~ msgstr ""
+#~ "Účet s emailem <strong>%s</strong> již existuje, prosím zkuste se "
+#~ "přihlásit znova."
+
+#~ msgid "Connected"
+#~ msgstr "Připojeno"
+
+#~ msgid "App ID"
+#~ msgstr "App ID"
+
+#~ msgid "App Secret"
+#~ msgstr "App Secret"
+
+#~ msgid "Register here:"
+#~ msgstr "Registorvat zde:"
+
+#~ msgid "Client ID"
+#~ msgstr "Client ID"
+
+#~ msgid "Client secret"
+#~ msgstr "Client secret"
+
+#~ msgid "Key"
+#~ msgstr "Key"
+
+#~ msgid "Secret"
+#~ msgstr "Secret"
+
+#~ msgid "Login"
+#~ msgstr "Přihlásit se"
+
+#~ msgid "Common settings"
+#~ msgstr "Společná nastavení"
+
+#~ msgid "Callback URL"
+#~ msgstr "Callback URL"
+
+#~ msgid "Some services (e.g. Twitter,Google) require callback URL."
+#~ msgstr "Některé služby (např. Twitter, Google) vyžadují callback URL."
+
+#~ msgid "Social connection"
+#~ msgstr "Propojení se sociálními sítěmi"
+
+#~ msgid "Connect your account with"
+#~ msgstr "Propojte svůj účet"
+
+#~ msgid "Connect with"
+#~ msgstr "Propojit s"
+
+#~ msgid "Conected with"
+#~ msgstr "Propojeno s"
+
+#~ msgid "Name"
+#~ msgstr "Jméno"
+
+#~ msgid "Nickname"
+#~ msgstr "Přezdívka"
+
+#~ msgid "Remove connection"
+#~ msgstr "Odebrat spojení"
+
+#~ msgid "Account creator"
+#~ msgstr "Účet vytvořil"
+
+#~ msgid "Connected with"
+#~ msgstr "Propojeno"
+
+#~ msgid "You are fully connected, like octopus with all networks"
+#~ msgstr "Jste propojen se všemi sítěmi, které podporujeme"
+
+#~ msgid "Social login"
+#~ msgstr "Social Login"
+
+#~ msgid "Remove"
+#~ msgstr "Odebrat"

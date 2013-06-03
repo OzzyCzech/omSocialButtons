@@ -1,6 +1,21 @@
 <?php
 /** @var \omSocialButtons\flatter\Flatter $this */
 ?>
-<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" <?
-Html::attr('href', apply_filters('share_url', get_permalink()));
-?>></a>
+<div class="flatter">
+	<a class="FlattrButton" style="display:none;"
+		<?
+		use omSocialButtons\Html;
+
+		Html::attr('title', ($this->options->title) ? $this->options->title : get_the_title());
+		Html::attr('href', apply_filters('share_url', get_permalink() ? : get_home_url()));
+		Html::attr('data-flattr-uid', $this->options->uid);
+		Html::attr('data-flattr-https', (int)$this->options->https);
+		Html::attr('data-flattr-button', $this->options->button);
+		Html::attr('data-flattr-category', $this->options->category);
+		Html::attr('data-flattr-tags', ($this->options->tags) ? $this->options->tags : $this->getPostTags());
+		Html::attr('data-flattr-lang', $this->options->lang);
+		Html::attr('data-flattr-popout', (int)$this->options->popout);
+		Html::attr('data-flattr-hidden', 0);
+		?>
+		><?= ($this->options->description) ? $this->options->description : strip_tags(get_the_excerpt()) ?></a>
+</div>

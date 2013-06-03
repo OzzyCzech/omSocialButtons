@@ -1,4 +1,4 @@
-<? /** @var \omSocialButtons\facebook\Facebook $this */ ?>
+<? /** @var \omSocialButtons\flatter\Flatter $this */ ?>
 <table class="form-table">
 	<tr>
 		<td colspan="2"><h3>Flatter</h3></td>
@@ -16,88 +16,108 @@
 	</tr>
 
 	<tr valign="top">
-		<th scope="row"><?php _e('Width', SB) ?></th>
+		<th scope="row"><?php _e('Mode', SB) ?></th>
 		<td>
-			<input name="flatter_width" type="text" id="flatter_width"
-			       value="<?php echo esc_attr($this->options->width); ?>"
+			<select name="flatter_mode" id="flatter_mode">
+				<option value="" <?php selected('', $this->options->mode); ?>>Auto</option>
+				<option value="manual" <?php selected('manual', $this->options->mode); ?>>Manual</option>
+			</select>
+		</td>
+	</tr>
+
+	<tr valign="top">
+		<th scope="row"><?php _e('HTTPS', SB) ?></th>
+		<td>
+			<label for="flatter_https">
+				<input name="flatter_https" type="checkbox" id="flatter_https"
+				       value="1" <?php checked(true, $this->options->https); ?> />
+				<?php _e('use https', SB) ?></label>
+		</td>
+	</tr>
+
+
+	<tr valign="top">
+		<th scope="row"><?php _e('Popout', SB) ?></th>
+		<td>
+			<label for="flatter_popout">
+				<input name="flatter_popout" type="checkbox" id="flatter_popout"
+				       value="1" <?php checked(true, $this->options->popout); ?> />
+				<?php _e('show popout when hovering mouse over button', SB) ?></label>
+		</td>
+	</tr>
+
+
+	<tr valign="top">
+		<th scope="row"><?php _e('UID', SB) ?></th>
+		<td>
+			<input name="flatter_uid" type="text" id="flatter_uid"
+			       value="<?= esc_attr($this->options->uid); ?>"
 			       class="regular-text"/>
-			<label for="flatter_width">px</label>
 
+			<p class="description"><? _e('A Flattr username', SB) ?></p>
 		</td>
 	</tr>
 
-	<tr valign="top">
-		<th scope="row"><?php _e('Send button', SB) ?></th>
-		<td>
-			<label for="flatter_send">
-				<input name="flatter_send" type="checkbox" id="flatter_send"
-				       value="1" <?php checked(true, $this->options->send); ?> />
-				<?php _e('send button', SB) ?></label>
-		</td>
-	</tr>
 
 	<tr valign="top">
-		<th scope="row"><?php _e('Show faces', SB) ?></th>
+		<th scope="row"><?php _e('Button', SB) ?></th>
 		<td>
-			<label for="flatter_show_faces">
-				<input name="flatter_show_faces" type="checkbox" id="flatter_show_faces"
-				       value="1" <?php checked(true, $this->options->show_faces); ?> />
-				<?php _e('show faces', SB) ?></label>
-		</td>
-	</tr>
-
-	<tr valign="top">
-		<th scope="row"><?php _e('Color scheme', SB) ?></th>
-		<td>
-			<select name="flatter_colorscheme" id="flatter_colorscheme">
-				<option value="" <?php selected('', $this->options->colorscheme); ?>>Light</option>
-				<option value="dark" <?php selected('dark', $this->options->colorscheme); ?>>Dark</option>
-			</select>
-		</td>
-	</tr>
-
-	<tr valign="top">
-		<th scope="row"><?php _e('Layout', SB) ?></th>
-		<td>
-			<select name="flatter_layout" id="flatter_layout">
-				<option value="" <?php selected('', $this->options->layout); ?>>standard</option>
-				<option value="button_count" <?php selected('button_count', $this->options->layout); ?>>button_count</option>
-				<option value="box_count" <?php selected('box_count', $this->options->layout); ?>>box_count</option>
-			</select>
-		</td>
-	</tr>
-
-	<tr valign="top">
-		<th scope="row"><?php _e('Font', SB) ?></th>
-		<td>
-			<select name="flatter_font" id="flatter_font">
-				<option value="" <?php selected('', $this->options->font); ?>></option>
-				<option value="arial" <?php selected('arial', $this->options->font); ?>>arial</option>
-				<option value="lucida grande" <?php selected('lucida grande', $this->options->font); ?>>lucida grande</option>
-				<option value="segoe ui" <?php selected('segoe ui', $this->options->font); ?>>segoe ui</option>
-				<option value="tahoma" <?php selected('tahoma', $this->options->font); ?>>tahoma</option>
-				<option value="trebuchet ms" <?php selected('trebuchet ms', $this->options->font); ?>>trebuchet ms</option>
-				<option value="verdana" <?php selected('verdana', $this->options->font); ?>>verdana</option>
+			<select name="flatter_button" id="flatter_button">
+				<option value="" <?php selected('', $this->options->button); ?>><?= __('Default', SB) ?></option>
+				<option value="compact" <?php selected('compact', $this->options->button); ?>>Compact</option>
 			</select>
 		</td>
 	</tr>
 
 
 	<tr valign="top">
-		<th scope="row"><?php _e('Action', SB) ?></th>
+		<th scope="row"><?php _e('Tags', SB) ?></th>
 		<td>
-			<select name="flatter_action" id="flatter_action">
-				<option value="" <?php selected($this->options->action, ''); ?>>like</option>
-				<option value="recommend" <?php selected($this->options->action, 'recommend'); ?>>recommend</option>
+			<input name="flatter_tags" type="text" id="flatter_tags" value="<?= esc_attr($this->options->tags); ?>"
+			       class="regular-text"/>
+
+			<p class="description"><? _e('Coma separated tags or leave empty for autofill by post tags', SB) ?></p>
+		</td>
+	</tr>
+
+	<tr valign="top">
+		<th scope="row"><?php _e('Description', SB) ?></th>
+		<td>
+			<input name="flatter_description" type="text" id="flatter_description"
+			       value="<?= $this->options->description ?>"
+			       class="regular-text"/>
+
+			<p class="description"><? _e('Description ', SB) ?></p>
+		</td>
+	</tr>
+
+
+	<tr valign="top">
+		<th scope="row"><?php _e('Lang', SB) ?></th>
+		<td>
+			<select name="flatter_lang" id="flatter_lang">
+				<?php foreach ($this->lang as $key => $name) { ?>
+					<option value="<?= $key ?>" <?php selected($key, $this->options->lang); ?>><?= $name ?></option>
+				<?php } ?>
 			</select>
 		</td>
 	</tr>
 
 
+	<tr valign="top">
+		<th scope="row"><?php _e('Category', SB) ?></th>
+		<td>
+			<select name="flatter_category" id="flatter_category">
+				<?php foreach ($this->categories as $key => $name) { ?>
+					<option value="<?= $key ?>" <?php selected($key, $this->options->category); ?>><?= $name ?></option>
+				<?php } ?>
+			</select>
+		</td>
+	</tr>
 
 	<tr>
 		<th><?php _e('Example', SB); ?></th>
-		<td><?php $this->getButtonHtml();?></td>
+		<td><?php $this->getButtonHtml(); ?></td>
 	</tr>
 
 	<tr>
@@ -107,4 +127,6 @@
 			   class="button-secondary">Flatter button</a>
 		</td>
 	</tr>
+
+
 </table>

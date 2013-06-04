@@ -156,9 +156,10 @@ class Html {
 	 *
 	 * @param $attr
 	 * @param $value
+	 * @param bool $allowempty
 	 */
-	public static function attr($attr, $value) {
-		if ($value) {
+	public static function attr($attr, $value, $allowempty = false) {
+		if ($value || $allowempty) {
 			echo ' ' . $attr . '="' . esc_attr($value) . '"';
 		}
 	}

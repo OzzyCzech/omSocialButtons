@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: omRealEstate\n"
-"POT-Creation-Date: 2013-05-30 13:38+0100\n"
-"PO-Revision-Date: 2013-05-30 13:43+0100\n"
+"POT-Creation-Date: 2013-06-04 12:44+0100\n"
+"PO-Revision-Date: 2013-06-04 12:47+0100\n"
 "Last-Translator: Roman Ožana <ozana@omdesign.cz>\n"
 "Language-Team:  <ozana@omdesign.cz>\n"
 "Language: cs_CZ\n"
@@ -84,58 +84,116 @@ msgstr "Povolit"
 msgid "enable button"
 msgstr "povolit tlačítko"
 
-#: ../buttons/facebook/settings.phtml:19 ../buttons/flatter/settings.phtml:19
-#: ../buttons/google/settings.phtml:43
+#: ../buttons/facebook/settings.phtml:19 ../buttons/google/settings.phtml:43
 msgid "Width"
 msgstr "Šířka"
 
-#: ../buttons/facebook/settings.phtml:30 ../buttons/flatter/settings.phtml:30
+#: ../buttons/facebook/settings.phtml:30
 msgid "Send button"
 msgstr "Tlačítko odeslat"
 
-#: ../buttons/facebook/settings.phtml:35 ../buttons/flatter/settings.phtml:35
+#: ../buttons/facebook/settings.phtml:35
 msgid "send button"
 msgstr "tlačítko odeslat"
 
-#: ../buttons/facebook/settings.phtml:40 ../buttons/flatter/settings.phtml:40
+#: ../buttons/facebook/settings.phtml:40
 msgid "Show faces"
 msgstr "Zobrazit avatary"
 
-#: ../buttons/facebook/settings.phtml:45 ../buttons/flatter/settings.phtml:45
+#: ../buttons/facebook/settings.phtml:45
 msgid "show faces"
 msgstr "zobrazit avatary"
 
-#: ../buttons/facebook/settings.phtml:50 ../buttons/flatter/settings.phtml:50
+#: ../buttons/facebook/settings.phtml:50
 msgid "Color scheme"
 msgstr "Barevné schéma"
 
-#: ../buttons/facebook/settings.phtml:60 ../buttons/flatter/settings.phtml:60
+#: ../buttons/facebook/settings.phtml:60
 msgid "Layout"
 msgstr "Layout"
 
-#: ../buttons/facebook/settings.phtml:71 ../buttons/flatter/settings.phtml:71
+#: ../buttons/facebook/settings.phtml:71
 msgid "Font"
 msgstr "Font"
 
-#: ../buttons/facebook/settings.phtml:87 ../buttons/flatter/settings.phtml:87
+#: ../buttons/facebook/settings.phtml:87
 msgid "Action"
 msgstr "Akce"
 
-#: ../buttons/facebook/settings.phtml:98 ../buttons/google/settings.phtml:54
-#: ../buttons/twitter/settings.phtml:38
+#: ../buttons/facebook/settings.phtml:98 ../buttons/flatter/settings.phtml:96
+#: ../buttons/google/settings.phtml:54 ../buttons/twitter/settings.phtml:38
 msgid "Lang"
 msgstr "Jazyk"
 
-#: ../buttons/facebook/settings.phtml:109 ../buttons/flatter/settings.phtml:99
-#: ../buttons/google/settings.phtml:65 ../buttons/twitter/settings.phtml:92
+#: ../buttons/facebook/settings.phtml:109
+#: ../buttons/flatter/settings.phtml:119 ../buttons/google/settings.phtml:65
+#: ../buttons/twitter/settings.phtml:92
 msgid "Example"
 msgstr "Příklad"
 
 #: ../buttons/facebook/settings.phtml:114
-#: ../buttons/flatter/settings.phtml:104 ../buttons/google/settings.phtml:70
+#: ../buttons/flatter/settings.phtml:124 ../buttons/google/settings.phtml:70
 #: ../buttons/kindle/settings.phtml:62 ../buttons/twitter/settings.phtml:97
 msgid "More info about"
 msgstr "Více informací"
+
+#: ../buttons/flatter/settings.phtml:19
+msgid "Mode"
+msgstr "Mód"
+
+#: ../buttons/flatter/settings.phtml:29
+msgid "HTTPS"
+msgstr "HTTPS"
+
+#: ../buttons/flatter/settings.phtml:34
+msgid "use https"
+msgstr "použít HTTPS"
+
+#: ../buttons/flatter/settings.phtml:40
+msgid "Popout"
+msgstr "Popout"
+
+#: ../buttons/flatter/settings.phtml:45
+msgid "show popout when hovering mouse over button"
+msgstr "ukázat popout při najetí myší nad tlačítkem"
+
+#: ../buttons/flatter/settings.phtml:51
+msgid "UID"
+msgstr "UID"
+
+#: ../buttons/flatter/settings.phtml:57
+msgid "A Flattr username"
+msgstr "Uživatelské jméno Flatter"
+
+#: ../buttons/flatter/settings.phtml:63
+msgid "Button"
+msgstr "Tlačítko"
+
+#: ../buttons/flatter/settings.phtml:66
+msgid "Default"
+msgstr "Default"
+
+#: ../buttons/flatter/settings.phtml:74
+msgid "Tags"
+msgstr "Tagy"
+
+#: ../buttons/flatter/settings.phtml:79
+msgid "Coma separated tags or leave empty for autofill by post tags"
+msgstr ""
+"Čárkou odděleny tagy nebo ponechte prázdné pro automatické doplnění dle tagů "
+"článku"
+
+#: ../buttons/flatter/settings.phtml:84
+msgid "Description"
+msgstr "Popis"
+
+#: ../buttons/flatter/settings.phtml:90
+msgid "Description "
+msgstr "Popis"
+
+#: ../buttons/flatter/settings.phtml:108
+msgid "Category"
+msgstr "Kategorie"
 
 #: ../buttons/google/settings.phtml:19 ../buttons/twitter/settings.phtml:58
 msgid "Size"

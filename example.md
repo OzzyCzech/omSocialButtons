@@ -1,6 +1,6 @@
+# Example
 
-CSS example
------------
+## CSS example
 
 ```
 .social-buttons .wrapper {
@@ -55,8 +55,8 @@ If you want hide popup window:
 }
 ```
 
-Callback actions
-----------------
+## Callback actions
+
 There are some action callbacks, they are call before or after method call
 
 ```

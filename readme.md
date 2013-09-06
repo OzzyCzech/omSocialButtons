@@ -1,19 +1,16 @@
-omSocialButtons
-===============
+# omSocialButtons
 
-How to install
---------------
+Add Twitter, Facebook and Google Plus to all Wordpress posts
 
-Download Zip version
+## How to install
 
-
-- [master](https://bitbucket.org/OzzyCzech/omsocialbuttons/get/master.zip)
-
-or use [BOWER](http://twitter.github.com/bower/) from Twitter
+Download Zip version of [master](https://bitbucket.org/OzzyCzech/omsocialbuttons/get/master.zip) or use
+[BOWER](http://twitter.github.com/bower/) from Twitter
 
     cd wp-content/plugins
     bower install git@bitbucket.org:OzzyCzech/omsocialbuttons.git
 
+Need to have `.bowerrc`
 
 Todo
 ----

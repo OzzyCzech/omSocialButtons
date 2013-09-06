@@ -1,10 +1,4 @@
-Plugin releases
-===============
-Add Twitter, Facebook and Google Plus to all Wordpress posts
-
-
-Release notes
--------------
+# Release notes
 
 [v2.1.1](https://bitbucket.org/OzzyCzech/omsocialbuttons/get/v2.1.1.zip)
 - fix problem with get_the_excerpt and the_content function

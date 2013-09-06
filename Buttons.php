@@ -10,7 +10,7 @@ use omSocialButtons\twitter\Twitter;
 
 /**
  * Plugin Name: omSocialButtons
- * Version: v2.0.0
+ * Version: v2.1.1
  * Plugin URI: http://www.omdesign.cz/
  * Description: Add Twitter, Facebook and Google Plus to all posts
  * Author: <a href = "http://www.omdesign.cz/kontakt" > Roman Ožana </a >

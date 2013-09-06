@@ -81,18 +81,16 @@ If you want hide popup window:
 }
 ```
 
-Todo
-----
-http://business.pinterest.com/widget-builder/#do_pin_it_button - Pinterest button
-http://developer.linkedin.com/publishers - linked in button
-
 Release notes
 -------------
 
-2.1
+2.1.1
+- fix problem with get_the_excerpt and the_content function
+
+2.1.0
 - add flatter button
 
-2.0
+2.0.0
 - new interface for buttons work well with new Wordpress
 - refactoring for simple way for add new Buttons
 
@@ -102,3 +100,8 @@ Release notes
 
 1.0
 - first public version with Google Plus, Facebook and Twitter button for Wordpress
+
+Todo
+----
+- http://business.pinterest.com/widget-builder/#do_pin_it_button - Pinterest button
+- http://developer.linkedin.com/publishers - linked in button

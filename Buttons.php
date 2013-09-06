@@ -86,6 +86,11 @@ class Buttons {
 	}
 
 
+	public function get_the_excerpt($text) {
+		remove_filter('the_content', array($this, 'the_content'));
+		return $text;
+	}
+
 	/**
 	 * Modify content automatically
 	 *
@@ -93,10 +98,14 @@ class Buttons {
 	 * @return string
 	 */
 	public function the_content($content) {
-		if (!$content) return $content;
+		global $wp_current_filter;
+		if (in_array('get_the_excerpt', $wp_current_filter)) return $content; // filter only post content not excerpt
 
 		// Ensure the correct page type and place
 		if (
+			(is_feed()) ||
+			(!$content) ||
+			(!is_main_query()) ||
 			(!in_array(get_post_type(), (array)$this->options->insert_to)) ||
 			(is_home() && !$this->options->on_home) ||
 			(is_archive() && !$this->options->on_archive) ||
@@ -193,4 +202,3 @@ $omSocialButtons->buttons['googleplus'] = new GooglePlus();
 $omSocialButtons->buttons['kindle'] = new Kindle();
 $omSocialButtons->buttons['flatter'] = new Flatter();
 $omSocialButtons->initButton(); // init all buttons
-

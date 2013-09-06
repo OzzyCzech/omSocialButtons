@@ -3,20 +3,20 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "968f0765c831aa2dd07bb78d361a112a",
+    "hash": "877191acdc7a9474cdc24b803b030308",
     "packages": [
         {
             "name": "om/wplugins",
-            "version": "v0.0.4",
+            "version": "0.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OzzyCzech/wplugins.git",
-                "reference": "v0.0.4"
+                "reference": "72df43e3123debd169f545779c5278684b466c9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OzzyCzech/wplugins/zipball/v0.0.4",
-                "reference": "v0.0.4",
+                "url": "https://api.github.com/repos/OzzyCzech/wplugins/zipball/72df43e3123debd169f545779c5278684b466c9a",
+                "reference": "72df43e3123debd169f545779c5278684b466c9a",
                 "shasum": ""
             },
             "require": {
@@ -43,7 +43,7 @@
                 }
             ],
             "description": "Wordpress plugin commons",
-            "time": "2013-04-20 12:14:45"
+            "time": "2013-06-04 21:08:20"
         }
     ],
     "packages-dev": [

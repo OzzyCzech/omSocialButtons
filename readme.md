@@ -6,7 +6,7 @@ How to install
 
 Download Zip version
 
-- [v2.1.1](https://bitbucket.org/OzzyCzech/omsocialbuttons/get/v2.1.1.zip)
+
 - [master](https://bitbucket.org/OzzyCzech/omsocialbuttons/get/master.zip)
 
 or use [BOWER](http://twitter.github.com/bower/) from Twitter
@@ -14,97 +14,6 @@ or use [BOWER](http://twitter.github.com/bower/) from Twitter
     cd wp-content/plugins
     bower install git@bitbucket.org:OzzyCzech/omsocialbuttons.git
 
-Callback actions
-----------------
-There are some action callbacks, they are call before or after method call
-
-```
-before_[key]_initButton -
-after_[key]_initButton -
-
-before_[key]_getButtonHtml - call before getting selected button html
-after_[key]_getButtonHtml - call after getting selected button html
-```
-
-Keys: ```facebook```, ```twitter```, ```googleplus```, ```kindle```, ```flatter```
-
-You can also apply filter fot buttons content: ```omSocialButtonsContent```
-
-CSS example
------------
-
-```
-.social-buttons .wrapper {
-	margin: 0;
-	padding: 5px 0;
-	text-align: right;
-	clear: both;
-}
-
-.social-buttons .wrapper .facebook:before {
-	content: "Sdílejte: ";
-}
-
-.social-buttons .wrapper .twitter-share-button {
-	width: 81px !important;
-}
-
-.social-buttons .wrapper *[id^=___plusone] {
-	width: 60px !important;
-}
-
-.social-buttons .wrapper iframe {
-	margin: 0;
-	padding: 0;
-}
-
-.social-buttons .wrapper .fb-like:hover iframe {
-	max-width: inherit !important;
-	width: 450px !important;
-}
-
-.social-buttons .wrapper>div {
-	display: inline-block;
-	margin-left: 5px;
-	height: 21px;
-	line-height: 0;
-	vertical-align: middle;
-}
-
-.post-social-buttons a:hover {
-	opacity: 1;
-	box-shadow: none;
-}
-```
-
-If you want hide popup window:
-
-```
-.fb-like {
-	height: 20px;
-	overflow: hidden;
-}
-```
-
-Release notes
--------------
-
-2.1.1
-- fix problem with get_the_excerpt and the_content function
-
-2.1.0
-- add flatter button
-
-2.0.0
-- new interface for buttons work well with new Wordpress
-- refactoring for simple way for add new Buttons
-
-1.1
-- bugfixes in Google Plus Icon
-- rename plugin to omSocialButtons (there is another plugin with name Buttons)
-
-1.0
-- first public version with Google Plus, Facebook and Twitter button for Wordpress
 
 Todo
 ----

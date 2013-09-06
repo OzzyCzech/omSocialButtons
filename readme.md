@@ -4,7 +4,12 @@ omSocialButtons
 How to install
 --------------
 
-Use [BOWER](http://twitter.github.com/bower/) from Twitter
+Download Zip version
+
+- [v2.1.1](https://bitbucket.org/OzzyCzech/omsocialbuttons/get/v2.1.1.zip)
+- [master](https://bitbucket.org/OzzyCzech/omsocialbuttons/get/master.zip)
+
+or use [BOWER](http://twitter.github.com/bower/) from Twitter
 
     cd wp-content/plugins
     bower install git@bitbucket.org:OzzyCzech/omsocialbuttons.git

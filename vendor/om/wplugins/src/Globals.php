@@ -74,10 +74,8 @@ class Globals {
 	 * @throws Exception
 	 */
 	private static function &get($name) {
-		if (array_key_exists($name, $GLOBALS)) {
+		if (isset($GLOBALS[$name])) {
 			return $GLOBALS[$name];
-		} else {
-			throw new Exception('Variable ' . $name . ' not exists');
 		}
 	}
 }

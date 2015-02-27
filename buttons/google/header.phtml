@@ -1,14 +1,4 @@
 <?php /** @var \omSocialButtons\google\GooglePlus $this */?>
 <!-- Google Plus -->
-<script type="text/javascript">
-    <?php if ($this->options->lang){ echo sprintf("window.___gcfg = {lang: '%s'};", esc_attr($this->options->lang)); }?>
-    (function () {
-        var po = document.createElement('script');
-        po.type = 'text/javascript';
-        po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(po, s);
-    })();
-</script>
+<script type="text/javascript"><?php if ($this->options->lang){ echo sprintf("window.___gcfg = {lang: '%s'};", esc_attr($this->options->lang)); }?>(function () {var po = document.createElement('script');po.type = 'text/javascript';po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(po, s);})();</script>
 <!-- Google Plus -->

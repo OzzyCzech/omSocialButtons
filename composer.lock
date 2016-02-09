@@ -1,22 +1,24 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
     "hash": "877191acdc7a9474cdc24b803b030308",
+    "content-hash": "f46ac6df7cd80f91973221ee01213be9",
     "packages": [
         {
             "name": "om/wplugins",
-            "version": "0.0.6",
+            "version": "v0.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/OzzyCzech/wplugins.git",
-                "reference": "72df43e3123debd169f545779c5278684b466c9a"
+                "reference": "6b4cc628657b750eb2e28e43afbe73b2213f0f2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/OzzyCzech/wplugins/zipball/72df43e3123debd169f545779c5278684b466c9a",
-                "reference": "72df43e3123debd169f545779c5278684b466c9a",
+                "url": "https://api.github.com/repos/OzzyCzech/wplugins/zipball/6b4cc628657b750eb2e28e43afbe73b2213f0f2d",
+                "reference": "6b4cc628657b750eb2e28e43afbe73b2213f0f2d",
                 "shasum": ""
             },
             "require": {
@@ -43,23 +45,15 @@
                 }
             ],
             "description": "Wordpress plugin commons",
-            "time": "2013-06-04 21:08:20"
+            "time": "2015-03-06 09:48:38"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
 }

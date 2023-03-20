@@ -11,10 +11,10 @@ use omSocialButtons\twitter\Twitter;
 /**
  * Plugin Name: omSocialButtons
  * Version: v2.1.1
- * Plugin URI: http://www.omdesign.cz/
+ * Plugin URI: https://ozana.cz/
  * Description: Add Twitter, Facebook and Google Plus to all posts
- * Author: <a href = "http://www.omdesign.cz/kontakt" > Roman Ožana </a >
- * Author URI: http://www.omdesign.cz/
+ * Author: <a href = "https://ozana.cz/kontakt" > Roman Ožana </a >
+ * Author URI: https://ozana.cz/
  */
 if (!class_exists('WP')) {
 	header('Status: 403 Forbidden');
@@ -38,7 +38,7 @@ require_once __DIR__ . '/vendor/autoload.php';
  * @method \omSocialButtons\google\GooglePlus googleplus();
  * @method \omSocialButtons\flatter\Flatter flatter();
  *
- * @author Roman Ozana <ozana@omdesign.cz>
+ * @author Roman Ozana <roman@ozana.cz>
  */
 class Buttons {
 
@@ -183,7 +183,7 @@ class Html {
  * @property bool $on_single
  * @property bool $on_archive
  *
- * @author Roman Ožana <ozana@omdesign.cz>
+ * @author Roman Ožana <roman@ozana.cz>
  */
 class CommonOptions extends Options {
 	protected $options = array(

@@ -1,7 +1,7 @@
 <?php
 namespace omSocialButtons\kindle;
 /**
- * @author Roman Ozana <ozana@omdesign.cz>
+ * @author Roman Ozana <roman@ozana.cz>
  * @see http://www.amazon.com/gp/sendtokindle/developers/button
  */
 class Kindle implements \omSocialButtons\IButton {
@@ -87,7 +87,7 @@ class Kindle implements \omSocialButtons\IButton {
  * @property bool $embed_js
  * @property array $selectors
  *
- * @author Roman Ožana <ozana@omdesign.cz>
+ * @author Roman Ožana <roman@ozana.cz>
  */
 class Options extends \om\Options {
 	protected $options = array(

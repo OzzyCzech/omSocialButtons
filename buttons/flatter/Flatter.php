@@ -5,7 +5,7 @@ use omSocialButtons\IButton;
 
 /**
  *
- * @author Roman Ozana <ozana@omdesign.cz>
+ * @author Roman Ozana <roman@ozana.cz>
  */
 class Flatter implements IButton {
 	/** @var Options */
@@ -164,7 +164,7 @@ class Flatter implements IButton {
  * @property string $tags
  * @property string $description
  *
- * @author Roman Ožana <ozana@omdesign.cz>
+ * @author Roman Ožana <roman@ozana.cz>
  */
 class Options extends \om\Options {
 

@@ -3,7 +3,7 @@ namespace omSocialButtons\google;
 use omSocialButtons\IButton;
 
 /**
- * @author Roman Ožana <ozana@omdesign.cz>
+ * @author Roman Ožana <roman@ozana.cz>
  */
 class GooglePlus implements IButton {
 
@@ -89,7 +89,7 @@ class GooglePlus implements IButton {
  * @property string $lang
  * @property string $annotation
  *
- * @author Roman Ožana <ozana@omdesign.cz>
+ * @author Roman Ožana <roman@ozana.cz>
  */
 class Options extends \om\Options {
 

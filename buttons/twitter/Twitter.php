@@ -5,7 +5,7 @@ use omSocialButtons\IButton;
 use omSocialButtons\Buttons;
 
 /**
- * @author Roman Ožana <ozana@omdesign.cz>
+ * @author Roman Ožana <roman@ozana.cz>
  */
 class Twitter implements IButton {
 
@@ -88,7 +88,7 @@ class Twitter implements IButton {
  * @property string $count
  * @property string $hashtags
  *
- * @author Roman Ožana <ozana@omdesign.cz>
+ * @author Roman Ožana <roman@ozana.cz>
  */
 class Options extends \om\Options {
 	protected $options = array(

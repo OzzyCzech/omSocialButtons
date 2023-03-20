@@ -5,7 +5,7 @@ use omSocialButtons\IButton;
 
 /**
  *
- * @author Roman Ozana <ozana@omdesign.cz>
+ * @author Roman Ozana <roman@ozana.cz>
  */
 class Facebook implements IButton {
 	/** @var Options */
@@ -188,7 +188,7 @@ class Facebook implements IButton {
  * @property string $font
  * @property string $lang
  *
- * @author Roman Ožana <ozana@omdesign.cz>
+ * @author Roman Ožana <roman@ozana.cz>
  */
 class Options extends \om\Options {
 
